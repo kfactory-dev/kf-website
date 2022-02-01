@@ -14,7 +14,6 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "lint": "eslint .",
-    "pin": "pinata-cli public",
     "prepare": "husky install"
   },
   "dependencies": {

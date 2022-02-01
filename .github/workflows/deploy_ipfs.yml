@@ -4,8 +4,6 @@ on:
   # push:
   #   branches:
   #     - main
-env:
-  PINATA_JWT: ${{ secrets.PINATA_JWT }}
 jobs:
   pin:
     runs-on: ubuntu-latest
@@ -15,5 +13,10 @@ jobs:
         with:
           path: node_modules
           key: ${{ runner.os }}-node_modules-${{ hashFiles('**/yarn.lock') }}
-      - run: yarn
-      - run: yarn pin -a $PINATA_JWT
+      - run: yarn && yarn build
+      - uses: aquiladev/ipfs-action@v0.2.0
+        with:
+          path: ./public
+          service: pinata
+          pinataKey: ${{ secrets.PINATA_API_KEY }}
+          pinataSecret: ${{ secrets.PINATA_API_SECRET }}
