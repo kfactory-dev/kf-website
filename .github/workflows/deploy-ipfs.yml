@@ -37,17 +37,9 @@ jobs:
           name: kf-website-${{ github.sha }}
           path: kf-website
 
-      - name: install ipfs
-        uses: ipfs/download-ipfs-distribution-action@v1
+      - uses: ipfs/download-ipfs-distribution-action@v1
 
-      - name: start ipfs daemon
-        uses: ipfs/start-ipfs-daemon-action@v1
-
-      - name: configure a remote pinning service
-        run: |
-          ipfs pin remote service add pinata \
-            https://api.pinata.cloud/psa \
-            ${{ secrets.PINATA_JWT }}
+      - uses: ipfs/start-ipfs-daemon-action@v1
 
       - name: publish the website on ipfs
         id: publish
@@ -55,8 +47,11 @@ jobs:
           ipfs add -rQ kf-website | tee ipfs_cid
           echo "::set-output name=cid::$(cat ipfs_cid)"
 
-      - name: pin the website
+      - name: pin the website using pinata
         run: |
+          ipfs pin remote service add pinata \
+            https://api.pinata.cloud/psa \
+            ${{ secrets.PINATA_JWT }}
           ipfs pin remote add --service=pinata "${{ steps.publish.outputs.cid }}"
 
       - uses: ouzi-dev/commit-status-updater@v1.1.0
