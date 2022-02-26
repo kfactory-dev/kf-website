@@ -8273,9 +8273,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-relative-paths@https://github.com/mpontus/gatsby-plugin-relative-paths.git#fix-binary-assets":
+"gatsby-plugin-relative-paths@https://github.com/mpontus/gatsby-plugin-relative-paths/archive/fix-binary-assets.tar.gz":
   version: 1.0.1
-  resolution: "gatsby-plugin-relative-paths@https://github.com/mpontus/gatsby-plugin-relative-paths.git#commit=a3b1c88be30cfd1638dbaa791a350da3fa2a4605"
+  resolution: "gatsby-plugin-relative-paths@https://github.com/mpontus/gatsby-plugin-relative-paths/archive/fix-binary-assets.tar.gz"
   dependencies:
     fs-extra: ^9.0.1
     glob: ^7.1.6
@@ -8285,7 +8285,7 @@ __metadata:
     p-map: ^2.0.0
   peerDependencies:
     gatsby: ^2.0.0
-  checksum: 5cd170aa1ec168564d3f28a3d62af6b46f331eb82ad6ff375dddb0d7b809914538cab9f12ab9fa8907479553c355e2309b19279cdae56bc570620a8e5eb14627
+  checksum: 718ed9cf6c953820b4efb873e69d938d081accba7a1912424b07e855cb3a0ad27da5304ef519eb5116b5465e39f99950961b359ee214a12a31b949e086104d0a
   languageName: node
   linkType: hard
 
@@ -10677,7 +10677,7 @@ __metadata:
     gatsby-plugin-mdx: ^3.6.0
     gatsby-plugin-postcss: ^5.6.0
     gatsby-plugin-react-helmet: ^5.6.0
-    gatsby-plugin-relative-paths: "https://github.com/mpontus/gatsby-plugin-relative-paths.git#fix-binary-assets"
+    gatsby-plugin-relative-paths: "https://github.com/mpontus/gatsby-plugin-relative-paths/archive/fix-binary-assets.tar.gz"
     gatsby-plugin-styled-components: ^5.6.0
     gatsby-plugin-ts: ^3.1.1
     gatsby-plugin-tsconfig-paths: ^1.0.5
