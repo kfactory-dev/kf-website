@@ -54,9 +54,18 @@ jobs:
             ${{ secrets.PINATA_JWT }}
           ipfs pin remote add --service=pinata "${{ steps.publish.outputs.cid }}"
 
-      - uses: ouzi-dev/commit-status-updater@v1.1.0
+      - uses: jwalton/gh-find-current-pr@v1
+        id: finder
+      - uses: marocchino/sticky-pull-request-comment@v2.2.0
         with:
-          status: success
-          name: IPFS Deploy
-          url: "https://ipfs.io/ipfs/${{ steps.publish.outputs.cid }}"
-          description: "CID: ${{ steps.publish.outputs.cid }}"
+          number: ${{ steps.finder.outputs.pr }}
+          hide_and_recreate: true
+          hide_classify: "OUTDATED"
+          message: |
+            <h2 align="center">IPFS Preview for ${{ github.sha }} is ready</h2>
+            <p align="center">
+              <a href="https://ipfs.io/ipfs/${{ steps.publish.outputs.cid }}/" target="_blank">
+                <code>${{ steps.publish.outputs.cid }}</code>
+                :mag_right:
+              </a>
+            </p>
