@@ -7,50 +7,86 @@
   kf-website
 </h1>
 
-## Prerequisites
-
-1. [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) are needed to build website and start the development server.
-
-2. [ipfs-cli](https://docs.ipfs.io/how-to/command-line-quick-start/) is needed to publish and pin website on ipfs.
-
-### Nix users
-
-Users of [NixOS](https://nixos.org/) and Nix package manager with [Nix Flakes](https://nixos.wiki/wiki/Flakes) enabled may take advatage of a complete development environent by running `nix develop`.
-
 ## Development
 
-```shell
-# install dependencies
-yarn
+Requires [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) package manager.
 
-# start a dev server and open the browser
+Install dependencies
+
+```shell
+yarn
+```
+
+Start a dev server and open the browser
+
+``` shell
 yarn start -o
 ```
 
-### Release build
-
-Run the following command to test release build of the website locally:
+Build the website and serve it locally
 
 ``` shell
 yarn build && yarn serve -o
-
 ```
-## Publish
 
-**Optional:** Run the following command if you intend on pinning the website using pinning service such as [Pinata](https://pinata.cloud/): 
+## Nix Flake
 
-```shell
-# enter the devShell
+Requires [NixOS](https://nixos.org/) or [Nix](https://nix.dev/) package manager with [flakes enabled](https://nixos.wiki/wiki/Flakes#Installing_flakes).
+
+Enter the development environment installing `node`, `yarn`, and `ipfs`
+
+``` shell
 nix develop
-
-# initialize ipfs configuration (if not already exists)
-ipfs init
-
-# configure pinata as a remote pinning service
-ipfs pin remote service add pinata https://api.pinata.cloud/psa <PINATA_JWT>
-
-# build the website and publish it on ipfs
-nix build && ipfs add -rQ $(readlink result)
 ```
 
-If successful, you will see CID which you can use to open the published website in the browser: `https://ipfs.io/ipfs/<CID>`.
+Create a reproducible build
+
+``` shell
+nix build
+```
+
+## IPFS
+
+Requires [ipfs-cli](https://docs.ipfs.io/how-to/command-line-quick-start/). 
+
+Initialize a new IPFS configuration (if not already exists)
+
+``` shell
+ipfs init
+```
+
+### Generate hash
+
+When using `yarn build`
+
+``` shell
+ipfs add -rQ public
+```
+
+When using `nix build`:
+
+``` shell
+ipfs add -rQ $(readlink result) 
+```
+
+### Pin the website
+
+Requires Pinata [API key](https://app.pinata.cloud/keys) with `addPinObject` permission.
+
+Start IPFS daemon in the background
+
+``` shell
+ipfs daemon &
+```
+
+Configure a remote pinning service
+
+``` shell
+ipfs pin remote service add pinata https://api.pinata.cloud/psa <PINATA_JWT>
+```
+
+Pin the website
+
+``` shell
+ipfs pin remote add --service=pinata <IPFS_HASH>
+```
