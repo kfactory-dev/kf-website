@@ -15,7 +15,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-yarn-v2
 
-      - name: save `node_modules`
+      - name: cache `node_modules`
         uses: actions/cache@v2
         with:
           path: node_modules
@@ -27,7 +27,7 @@ jobs:
     needs: setup
     steps:
       - uses: actions/checkout@v2
-      - name: restore `node_modules`
+      - name: cache `node_modules`
         uses: actions/cache@v2
         with:
           path: node_modules
@@ -39,7 +39,7 @@ jobs:
     needs: setup
     steps:
       - uses: actions/checkout@v2
-      - name: restore `node_modules`
+      - name: cache `node_modules`
         uses: actions/cache@v2
         with:
           path: node_modules
