@@ -3246,11 +3246,6 @@ balanced-match@^1.0.0:
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.2.tgz#e83e3a7e3f300b34cb9d87f615fa0cbf357690ee"
   integrity sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==
 
-base-path-converter@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/base-path-converter/-/base-path-converter-1.0.2.tgz#e80b4b4f31c7b1561e632158e00774b6f2f27978"
-  integrity sha512-51R8JiuXadknn6ouVUteOhDpmI3G5u5GqjruL7bPJpfxUHVgosaO5uPAvRP4FeR4VyyH4sSvsN78Ci6ouoRYqQ==
-
 base64-arraybuffer@0.1.4:
   version "0.1.4"
   resolved "https://registry.yarnpkg.com/base64-arraybuffer/-/base64-arraybuffer-0.1.4.tgz#9818c79e059b1355f97e0428a017c838e90ba812"
@@ -9161,12 +9156,11 @@ pify@^4.0.1:
   resolved "https://registry.yarnpkg.com/pify/-/pify-4.0.1.tgz#4b2cd25c50d598735c50292224fd8c6df41e3231"
   integrity sha512-uB80kBFb/tfd68bVleG9T5GGsGPjJrLAUpR5PZIrhBnIaRTQRjqdJSsIKkOP6OAIFbj7GOrcudc5pNjZ+geV2g==
 
-pinata-upload-cli@^1.0.4:
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/pinata-upload-cli/-/pinata-upload-cli-1.0.4.tgz#bba6eabb8d96c7d4c57fa2393541cf586383629b"
-  integrity sha512-bAsv6Do23XdvDwToT4W9lGsVgrqaxqSiNXEiM9pytjSSwgNu1EDAsUMpnsjlQvEh+Reyl3YkNarcrpQiNRJ/0w==
+pinata-upload-cli@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/pinata-upload-cli/-/pinata-upload-cli-1.1.0.tgz#ba076565d8e732021cac6ae6ddad4b7a0829afb5"
+  integrity sha512-saVtmovZdTawlY9leYXjtwm6JhhbMksWmziRCeNjtXaz97gA3oCb+bBFJtSxObKJXHkQmdZy1vPArSgnpTY4Dw==
   dependencies:
-    base-path-converter "^1.0.2"
     commander "^8.3.0"
     form-data "^4.0.0"
     got "^11.8.2"
