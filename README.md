@@ -63,7 +63,7 @@ When using `yarn build`
 ipfs add -rQ public
 ```
 
-When using `nix build`:
+When using `nix build`
 
 ``` shell
 ipfs add -rQ $(readlink result) 
@@ -90,5 +90,3 @@ Pin the website
 ``` shell
 ipfs pin remote add --service=pinata <IPFS_HASH>
 ```
-
-`
