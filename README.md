@@ -55,6 +55,12 @@ Initialize a new IPFS configuration (if not already exists)
 ipfs init
 ```
 
+Start IPFS daemon in the background 
+
+``` shell
+ipfs daemon &
+```
+
 ### Generate hash
 
 When using `yarn build`
@@ -77,12 +83,6 @@ ipfs add -rQ $(readlink result)
   - Pins
     - [x] addPinObject
     - [x] getPinObject
-
-Start IPFS daemon in the background
-
-``` shell
-ipfs daemon &
-```
 
 Configure a remote pinning service
 
