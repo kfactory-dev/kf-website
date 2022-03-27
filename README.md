@@ -69,9 +69,14 @@ When using `nix build`
 ipfs add -rQ $(readlink result) 
 ```
 
-### Pin the website
+### Pin the website using Pinata
 
-Requires Pinata [API key](https://app.pinata.cloud/keys) with `addPinObject` permission.
+[Create an API key](https://app.pinata.cloud/keys) with following permissions
+
+- Pinning Services API
+  - Pins
+    - [x] addPinObject
+    - [x] getPinObject
 
 Start IPFS daemon in the background
 
