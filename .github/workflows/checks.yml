@@ -13,7 +13,7 @@ jobs:
           path: .yarn/cache
           key: ${{ runner.os }}-yarn-v2-${{ hashfiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-v2
+            ${{ runner.os }}-yarn-v3
 
       - name: cache `node_modules`
         uses: actions/cache@v2
