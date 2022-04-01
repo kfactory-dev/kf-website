@@ -55,6 +55,12 @@ Initialize a new IPFS configuration (if not already exists)
 ipfs init
 ```
 
+Start IPFS daemon in the background 
+
+``` shell
+ipfs daemon &
+```
+
 ### Generate hash
 
 When using `yarn build`
@@ -69,15 +75,14 @@ When using `nix build`
 ipfs add -rQ $(readlink result) 
 ```
 
-### Pin the website
+### Pin the website using Pinata
 
-Requires Pinata [API key](https://app.pinata.cloud/keys) with `addPinObject` permission.
+[Create an API key](https://app.pinata.cloud/keys) with following permissions
 
-Start IPFS daemon in the background
-
-``` shell
-ipfs daemon &
-```
+- Pinning Services API
+  - Pins
+    - [x] addPinObject
+    - [x] getPinObject
 
 Configure a remote pinning service
 
