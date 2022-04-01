@@ -6557,10 +6557,10 @@ gatsby-sharp@^0.5.0:
     "@types/sharp" "^0.29.5"
     sharp "^0.30.1"
 
-gatsby-source-lever@^4.10.0:
-  version "4.10.0"
-  resolved "https://registry.yarnpkg.com/gatsby-source-lever/-/gatsby-source-lever-4.10.0.tgz#3c66ea2dd282c017847d185846b7b01142013b73"
-  integrity sha512-MAoqw7aLXC2BovahPYAjsu7dRkiu5FlhexUy4JuIQv0PrVeOi/Uk+CuKA8eYaxjF3IRngbJ1lHZlWuAKZnhbXg==
+gatsby-source-lever@^4.11.0:
+  version "4.11.0"
+  resolved "https://registry.yarnpkg.com/gatsby-source-lever/-/gatsby-source-lever-4.11.0.tgz#0b65adddd24b2ad5a560e76eede5bff87dc3dbbc"
+  integrity sha512-XC2GKGwSZDNFGZn8LBDVs2GQgNsC/jJBJfEj6yvww7BGO3o8OipAV/rtEQjIyLhbYBY9P14xBD0OkHuuDgWKow==
   dependencies:
     "@babel/runtime" "^7.15.4"
     axios "^0.21.1"
