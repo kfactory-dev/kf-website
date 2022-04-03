@@ -4,51 +4,94 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  kf-website
 </h1>
 
-## 🚀 Quick start
+## Development
 
-1.  **Create a Gatsby site.**
+Requires [Node.js](https://nodejs.org/) and [Yarn](https://yarnpkg.com/) package manager.
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+Install dependencies
 
-    ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
-    ```
+```shell
+yarn
+```
 
-2.  **Start developing.**
+Start a dev server and open the browser
 
-    Navigate into your new site’s directory and start it up.
+``` shell
+yarn start -o
+```
 
-    ```shell
-    cd my-gatsby-site/
-    npm run develop
-    ```
+Build the website and serve it locally
 
-3.  **Open the code and start customizing!**
+``` shell
+yarn build && yarn serve -o
+```
 
-    Your site is now running at http://localhost:8000!
+## Nix Flake
 
-    Edit `src/pages/index.js` to see your site update in real-time!
+Requires [NixOS](https://nixos.org/) or [Nix](https://nix.dev/) package manager with [flakes enabled](https://nixos.wiki/wiki/Flakes#Installing_flakes).
 
-4.  **Learn more**
+Enter the development environment installing `node`, `yarn`, and `ipfs`
 
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+``` shell
+nix develop
+```
 
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+Create a reproducible build
 
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+``` shell
+nix build
+```
 
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+## IPFS
 
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+Requires [ipfs-cli](https://docs.ipfs.io/how-to/command-line-quick-start/). 
 
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
+Initialize a new IPFS configuration (if not already exists)
 
-## 🚀 Quick start (Gatsby Cloud)
+``` shell
+ipfs init
+```
 
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
+Start IPFS daemon in the background 
 
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)
+``` shell
+ipfs daemon &
+```
+
+### Generate hash
+
+When using `yarn build`
+
+``` shell
+ipfs add -rQ public
+```
+
+When using `nix build`
+
+``` shell
+ipfs add -rQ $(readlink result) 
+```
+
+### Pin the website using Pinata
+
+[Create an API key](https://app.pinata.cloud/keys) with following permissions
+
+- Pinning Services API
+  - Pins
+    - [x] addPinObject
+    - [x] getPinObject
+
+Configure a remote pinning service
+
+``` shell
+ipfs pin remote service add pinata https://api.pinata.cloud/psa <PINATA_JWT>
+```
+
+Pin the website
+
+``` shell
+ipfs pin remote add --service=pinata <IPFS_HASH>
+```

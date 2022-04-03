@@ -1,5 +1,6 @@
-node_modules/
-.cache/
-public
-yarn-error.log
-graphql-types.ts
+/.cache/
+/.yarn/cache/
+/.yarn/install-state.gz
+/node_modules/
+/public/
+/yarn-error.log
