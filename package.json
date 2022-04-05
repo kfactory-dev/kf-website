@@ -19,7 +19,7 @@
     "@centrifuge/fabric": "^0.0.3",
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
-    "concurrently": "^7.0.0",
+    "concurrently": "^7.1.0",
     "gatsby": "^4.11.1",
     "nanoid": "^3.3.2",
     "react": "^17.0.1",
