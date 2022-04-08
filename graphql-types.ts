@@ -1,713 +1,761 @@
-export type Maybe<T> = T | null
-export type InputMaybe<T> = Maybe<T>
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] }
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> }
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> }
+export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
+export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   /** The `ID` scalar type represents a unique identifier, often used to refetch an object or as key for a cache. The ID type appears in a JSON response as a String; however, it is not intended to be human-readable. When expected as an input type, any string (such as `"4"`) or integer (such as `4`) input value will be accepted as an ID. */
-  ID: string
+  ID: string;
   /** The `String` scalar type represents textual data, represented as UTF-8 character sequences. The String type is most often used by GraphQL to represent free-form human-readable text. */
-  String: string
+  String: string;
   /** The `Boolean` scalar type represents `true` or `false`. */
-  Boolean: boolean
+  Boolean: boolean;
   /** The `Int` scalar type represents non-fractional signed whole numeric values. Int can represent values between -(2^31) and 2^31 - 1. */
-  Int: number
+  Int: number;
   /** The `Float` scalar type represents signed double-precision fractional values as specified by [IEEE 754](https://en.wikipedia.org/wiki/IEEE_floating_point). */
-  Float: number
+  Float: number;
   /** A date string, such as 2007-12-03, compliant with the ISO 8601 standard for representation of dates and times using the Gregorian calendar. */
-  Date: any
+  Date: any;
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
-  JSON: any
-}
+  JSON: any;
+};
 
 export type File = Node & {
-  sourceInstanceName: Scalars['String']
-  absolutePath: Scalars['String']
-  relativePath: Scalars['String']
-  extension: Scalars['String']
-  size: Scalars['Int']
-  prettySize: Scalars['String']
-  modifiedTime: Scalars['Date']
-  accessTime: Scalars['Date']
-  changeTime: Scalars['Date']
-  birthTime: Scalars['Date']
-  root: Scalars['String']
-  dir: Scalars['String']
-  base: Scalars['String']
-  ext: Scalars['String']
-  name: Scalars['String']
-  relativeDirectory: Scalars['String']
-  dev: Scalars['Int']
-  mode: Scalars['Int']
-  nlink: Scalars['Int']
-  uid: Scalars['Int']
-  gid: Scalars['Int']
-  rdev: Scalars['Int']
-  ino: Scalars['Float']
-  atimeMs: Scalars['Float']
-  mtimeMs: Scalars['Float']
-  ctimeMs: Scalars['Float']
-  atime: Scalars['Date']
-  mtime: Scalars['Date']
-  ctime: Scalars['Date']
+  sourceInstanceName: Scalars['String'];
+  absolutePath: Scalars['String'];
+  relativePath: Scalars['String'];
+  extension: Scalars['String'];
+  size: Scalars['Int'];
+  prettySize: Scalars['String'];
+  modifiedTime: Scalars['Date'];
+  accessTime: Scalars['Date'];
+  changeTime: Scalars['Date'];
+  birthTime: Scalars['Date'];
+  root: Scalars['String'];
+  dir: Scalars['String'];
+  base: Scalars['String'];
+  ext: Scalars['String'];
+  name: Scalars['String'];
+  relativeDirectory: Scalars['String'];
+  dev: Scalars['Int'];
+  mode: Scalars['Int'];
+  nlink: Scalars['Int'];
+  uid: Scalars['Int'];
+  gid: Scalars['Int'];
+  rdev: Scalars['Int'];
+  ino: Scalars['Float'];
+  atimeMs: Scalars['Float'];
+  mtimeMs: Scalars['Float'];
+  ctimeMs: Scalars['Float'];
+  atime: Scalars['Date'];
+  mtime: Scalars['Date'];
+  ctime: Scalars['Date'];
   /** @deprecated Use `birthTime` instead */
-  birthtime?: Maybe<Scalars['Date']>
+  birthtime?: Maybe<Scalars['Date']>;
   /** @deprecated Use `birthTime` instead */
-  birthtimeMs?: Maybe<Scalars['Float']>
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-}
+  birthtimeMs?: Maybe<Scalars['Float']>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
 
 export type FileModifiedTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
 
 export type FileAccessTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
 
 export type FileChangeTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
 
 export type FileBirthTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
 
 export type FileAtimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
 
 export type FileMtimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
 
 export type FileCtimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
 
 /** Node Interface */
 export type Node = {
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-}
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
 
 export type Internal = {
-  content?: Maybe<Scalars['String']>
-  contentDigest: Scalars['String']
-  description?: Maybe<Scalars['String']>
-  fieldOwners?: Maybe<Array<Maybe<Scalars['String']>>>
-  ignoreType?: Maybe<Scalars['Boolean']>
-  mediaType?: Maybe<Scalars['String']>
-  owner: Scalars['String']
-  type: Scalars['String']
-}
+  content?: Maybe<Scalars['String']>;
+  contentDigest: Scalars['String'];
+  description?: Maybe<Scalars['String']>;
+  fieldOwners?: Maybe<Array<Maybe<Scalars['String']>>>;
+  ignoreType?: Maybe<Scalars['Boolean']>;
+  mediaType?: Maybe<Scalars['String']>;
+  owner: Scalars['String'];
+  type: Scalars['String'];
+};
 
 export type Directory = Node & {
-  sourceInstanceName: Scalars['String']
-  absolutePath: Scalars['String']
-  relativePath: Scalars['String']
-  extension: Scalars['String']
-  size: Scalars['Int']
-  prettySize: Scalars['String']
-  modifiedTime: Scalars['Date']
-  accessTime: Scalars['Date']
-  changeTime: Scalars['Date']
-  birthTime: Scalars['Date']
-  root: Scalars['String']
-  dir: Scalars['String']
-  base: Scalars['String']
-  ext: Scalars['String']
-  name: Scalars['String']
-  relativeDirectory: Scalars['String']
-  dev: Scalars['Int']
-  mode: Scalars['Int']
-  nlink: Scalars['Int']
-  uid: Scalars['Int']
-  gid: Scalars['Int']
-  rdev: Scalars['Int']
-  ino: Scalars['Float']
-  atimeMs: Scalars['Float']
-  mtimeMs: Scalars['Float']
-  ctimeMs: Scalars['Float']
-  atime: Scalars['Date']
-  mtime: Scalars['Date']
-  ctime: Scalars['Date']
+  sourceInstanceName: Scalars['String'];
+  absolutePath: Scalars['String'];
+  relativePath: Scalars['String'];
+  extension: Scalars['String'];
+  size: Scalars['Int'];
+  prettySize: Scalars['String'];
+  modifiedTime: Scalars['Date'];
+  accessTime: Scalars['Date'];
+  changeTime: Scalars['Date'];
+  birthTime: Scalars['Date'];
+  root: Scalars['String'];
+  dir: Scalars['String'];
+  base: Scalars['String'];
+  ext: Scalars['String'];
+  name: Scalars['String'];
+  relativeDirectory: Scalars['String'];
+  dev: Scalars['Int'];
+  mode: Scalars['Int'];
+  nlink: Scalars['Int'];
+  uid: Scalars['Int'];
+  gid: Scalars['Int'];
+  rdev: Scalars['Int'];
+  ino: Scalars['Float'];
+  atimeMs: Scalars['Float'];
+  mtimeMs: Scalars['Float'];
+  ctimeMs: Scalars['Float'];
+  atime: Scalars['Date'];
+  mtime: Scalars['Date'];
+  ctime: Scalars['Date'];
   /** @deprecated Use `birthTime` instead */
-  birthtime?: Maybe<Scalars['Date']>
+  birthtime?: Maybe<Scalars['Date']>;
   /** @deprecated Use `birthTime` instead */
-  birthtimeMs?: Maybe<Scalars['Float']>
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-}
+  birthtimeMs?: Maybe<Scalars['Float']>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
 
 export type DirectoryModifiedTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
 
 export type DirectoryAccessTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
 
 export type DirectoryChangeTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
 
 export type DirectoryBirthTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
 
 export type DirectoryAtimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
 
 export type DirectoryMtimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
+
 
 export type DirectoryCtimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
 
 export type Site = Node & {
-  buildTime?: Maybe<Scalars['Date']>
-  siteMetadata?: Maybe<SiteSiteMetadata>
-  polyfill?: Maybe<Scalars['Boolean']>
-  pathPrefix?: Maybe<Scalars['String']>
-  jsxRuntime?: Maybe<Scalars['String']>
-  trailingSlash?: Maybe<Scalars['String']>
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-}
+  buildTime?: Maybe<Scalars['Date']>;
+  siteMetadata?: Maybe<SiteSiteMetadata>;
+  assetPrefix?: Maybe<Scalars['String']>;
+  polyfill?: Maybe<Scalars['Boolean']>;
+  pathPrefix?: Maybe<Scalars['String']>;
+  jsxRuntime?: Maybe<Scalars['String']>;
+  trailingSlash?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
 
 export type SiteBuildTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
 
 export type SiteSiteMetadata = {
-  title?: Maybe<Scalars['String']>
-  description?: Maybe<Scalars['String']>
-  siteUrl?: Maybe<Scalars['String']>
-  titleTemplate?: Maybe<Scalars['String']>
-}
+  title?: Maybe<Scalars['String']>;
+  description?: Maybe<Scalars['String']>;
+  siteUrl?: Maybe<Scalars['String']>;
+  titleTemplate?: Maybe<Scalars['String']>;
+};
 
 export type SiteFunction = Node & {
-  functionRoute: Scalars['String']
-  pluginName: Scalars['String']
-  originalAbsoluteFilePath: Scalars['String']
-  originalRelativeFilePath: Scalars['String']
-  relativeCompiledFilePath: Scalars['String']
-  absoluteCompiledFilePath: Scalars['String']
-  matchPath?: Maybe<Scalars['String']>
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-}
+  functionRoute: Scalars['String'];
+  pluginName: Scalars['String'];
+  originalAbsoluteFilePath: Scalars['String'];
+  originalRelativeFilePath: Scalars['String'];
+  relativeCompiledFilePath: Scalars['String'];
+  absoluteCompiledFilePath: Scalars['String'];
+  matchPath?: Maybe<Scalars['String']>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
 
 export type SitePage = Node & {
-  path: Scalars['String']
-  component: Scalars['String']
-  internalComponentName: Scalars['String']
-  componentChunkName: Scalars['String']
-  matchPath?: Maybe<Scalars['String']>
-  pageContext?: Maybe<Scalars['JSON']>
-  pluginCreator?: Maybe<SitePlugin>
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-}
+  path: Scalars['String'];
+  component: Scalars['String'];
+  internalComponentName: Scalars['String'];
+  componentChunkName: Scalars['String'];
+  matchPath?: Maybe<Scalars['String']>;
+  pageContext?: Maybe<Scalars['JSON']>;
+  pluginCreator?: Maybe<SitePlugin>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
 
 export type SitePlugin = Node & {
-  resolve?: Maybe<Scalars['String']>
-  name?: Maybe<Scalars['String']>
-  version?: Maybe<Scalars['String']>
-  nodeAPIs?: Maybe<Array<Maybe<Scalars['String']>>>
-  browserAPIs?: Maybe<Array<Maybe<Scalars['String']>>>
-  ssrAPIs?: Maybe<Array<Maybe<Scalars['String']>>>
-  pluginFilepath?: Maybe<Scalars['String']>
-  pluginOptions?: Maybe<Scalars['JSON']>
-  packageJson?: Maybe<Scalars['JSON']>
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-}
+  resolve?: Maybe<Scalars['String']>;
+  name?: Maybe<Scalars['String']>;
+  version?: Maybe<Scalars['String']>;
+  nodeAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
+  browserAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
+  ssrAPIs?: Maybe<Array<Maybe<Scalars['String']>>>;
+  pluginFilepath?: Maybe<Scalars['String']>;
+  pluginOptions?: Maybe<Scalars['JSON']>;
+  packageJson?: Maybe<Scalars['JSON']>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
 
 export type SiteBuildMetadata = Node & {
-  buildTime?: Maybe<Scalars['Date']>
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-}
+  buildTime?: Maybe<Scalars['Date']>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
 
 export type SiteBuildMetadataBuildTimeArgs = {
-  formatString?: InputMaybe<Scalars['String']>
-  fromNow?: InputMaybe<Scalars['Boolean']>
-  difference?: InputMaybe<Scalars['String']>
-  locale?: InputMaybe<Scalars['String']>
-}
+  formatString?: InputMaybe<Scalars['String']>;
+  fromNow?: InputMaybe<Scalars['Boolean']>;
+  difference?: InputMaybe<Scalars['String']>;
+  locale?: InputMaybe<Scalars['String']>;
+};
 
 export type MdxFrontmatter = {
-  title: Scalars['String']
-}
+  title: Scalars['String'];
+};
 
 export type MdxHeadingMdx = {
-  value?: Maybe<Scalars['String']>
-  depth?: Maybe<Scalars['Int']>
-}
+  value?: Maybe<Scalars['String']>;
+  depth?: Maybe<Scalars['Int']>;
+};
 
-export type HeadingsMdx = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+export type HeadingsMdx =
+  | 'h1'
+  | 'h2'
+  | 'h3'
+  | 'h4'
+  | 'h5'
+  | 'h6';
 
 export type MdxWordCount = {
-  paragraphs?: Maybe<Scalars['Int']>
-  sentences?: Maybe<Scalars['Int']>
-  words?: Maybe<Scalars['Int']>
-}
+  paragraphs?: Maybe<Scalars['Int']>;
+  sentences?: Maybe<Scalars['Int']>;
+  words?: Maybe<Scalars['Int']>;
+};
 
 export type Mdx = Node & {
-  rawBody: Scalars['String']
-  fileAbsolutePath: Scalars['String']
-  frontmatter?: Maybe<MdxFrontmatter>
-  slug?: Maybe<Scalars['String']>
-  body: Scalars['String']
-  excerpt: Scalars['String']
-  headings?: Maybe<Array<Maybe<MdxHeadingMdx>>>
-  html?: Maybe<Scalars['String']>
-  mdxAST?: Maybe<Scalars['JSON']>
-  tableOfContents?: Maybe<Scalars['JSON']>
-  timeToRead?: Maybe<Scalars['Int']>
-  wordCount?: Maybe<MdxWordCount>
-  id: Scalars['ID']
-  parent?: Maybe<Node>
-  children: Array<Node>
-  internal: Internal
-}
+  rawBody: Scalars['String'];
+  fileAbsolutePath: Scalars['String'];
+  frontmatter?: Maybe<MdxFrontmatter>;
+  slug?: Maybe<Scalars['String']>;
+  body: Scalars['String'];
+  excerpt: Scalars['String'];
+  headings?: Maybe<Array<Maybe<MdxHeadingMdx>>>;
+  html?: Maybe<Scalars['String']>;
+  mdxAST?: Maybe<Scalars['JSON']>;
+  tableOfContents?: Maybe<Scalars['JSON']>;
+  timeToRead?: Maybe<Scalars['Int']>;
+  wordCount?: Maybe<MdxWordCount>;
+  id: Scalars['ID'];
+  parent?: Maybe<Node>;
+  children: Array<Node>;
+  internal: Internal;
+};
+
 
 export type MdxExcerptArgs = {
-  pruneLength?: InputMaybe<Scalars['Int']>
-  truncate?: InputMaybe<Scalars['Boolean']>
-}
+  pruneLength?: InputMaybe<Scalars['Int']>;
+  truncate?: InputMaybe<Scalars['Boolean']>;
+};
+
 
 export type MdxHeadingsArgs = {
-  depth?: InputMaybe<HeadingsMdx>
-}
+  depth?: InputMaybe<HeadingsMdx>;
+};
+
 
 export type MdxTableOfContentsArgs = {
-  maxDepth?: InputMaybe<Scalars['Int']>
-}
+  maxDepth?: InputMaybe<Scalars['Int']>;
+};
 
 export type Query = {
-  file?: Maybe<File>
-  allFile: FileConnection
-  directory?: Maybe<Directory>
-  allDirectory: DirectoryConnection
-  site?: Maybe<Site>
-  allSite: SiteConnection
-  siteFunction?: Maybe<SiteFunction>
-  allSiteFunction: SiteFunctionConnection
-  sitePage?: Maybe<SitePage>
-  allSitePage: SitePageConnection
-  sitePlugin?: Maybe<SitePlugin>
-  allSitePlugin: SitePluginConnection
-  siteBuildMetadata?: Maybe<SiteBuildMetadata>
-  allSiteBuildMetadata: SiteBuildMetadataConnection
-  mdx?: Maybe<Mdx>
-  allMdx: MdxConnection
-}
+  file?: Maybe<File>;
+  allFile: FileConnection;
+  directory?: Maybe<Directory>;
+  allDirectory: DirectoryConnection;
+  site?: Maybe<Site>;
+  allSite: SiteConnection;
+  siteFunction?: Maybe<SiteFunction>;
+  allSiteFunction: SiteFunctionConnection;
+  sitePage?: Maybe<SitePage>;
+  allSitePage: SitePageConnection;
+  sitePlugin?: Maybe<SitePlugin>;
+  allSitePlugin: SitePluginConnection;
+  siteBuildMetadata?: Maybe<SiteBuildMetadata>;
+  allSiteBuildMetadata: SiteBuildMetadataConnection;
+  mdx?: Maybe<Mdx>;
+  allMdx: MdxConnection;
+};
+
 
 export type QueryFileArgs = {
-  sourceInstanceName?: InputMaybe<StringQueryOperatorInput>
-  absolutePath?: InputMaybe<StringQueryOperatorInput>
-  relativePath?: InputMaybe<StringQueryOperatorInput>
-  extension?: InputMaybe<StringQueryOperatorInput>
-  size?: InputMaybe<IntQueryOperatorInput>
-  prettySize?: InputMaybe<StringQueryOperatorInput>
-  modifiedTime?: InputMaybe<DateQueryOperatorInput>
-  accessTime?: InputMaybe<DateQueryOperatorInput>
-  changeTime?: InputMaybe<DateQueryOperatorInput>
-  birthTime?: InputMaybe<DateQueryOperatorInput>
-  root?: InputMaybe<StringQueryOperatorInput>
-  dir?: InputMaybe<StringQueryOperatorInput>
-  base?: InputMaybe<StringQueryOperatorInput>
-  ext?: InputMaybe<StringQueryOperatorInput>
-  name?: InputMaybe<StringQueryOperatorInput>
-  relativeDirectory?: InputMaybe<StringQueryOperatorInput>
-  dev?: InputMaybe<IntQueryOperatorInput>
-  mode?: InputMaybe<IntQueryOperatorInput>
-  nlink?: InputMaybe<IntQueryOperatorInput>
-  uid?: InputMaybe<IntQueryOperatorInput>
-  gid?: InputMaybe<IntQueryOperatorInput>
-  rdev?: InputMaybe<IntQueryOperatorInput>
-  ino?: InputMaybe<FloatQueryOperatorInput>
-  atimeMs?: InputMaybe<FloatQueryOperatorInput>
-  mtimeMs?: InputMaybe<FloatQueryOperatorInput>
-  ctimeMs?: InputMaybe<FloatQueryOperatorInput>
-  atime?: InputMaybe<DateQueryOperatorInput>
-  mtime?: InputMaybe<DateQueryOperatorInput>
-  ctime?: InputMaybe<DateQueryOperatorInput>
-  birthtime?: InputMaybe<DateQueryOperatorInput>
-  birthtimeMs?: InputMaybe<FloatQueryOperatorInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  sourceInstanceName?: InputMaybe<StringQueryOperatorInput>;
+  absolutePath?: InputMaybe<StringQueryOperatorInput>;
+  relativePath?: InputMaybe<StringQueryOperatorInput>;
+  extension?: InputMaybe<StringQueryOperatorInput>;
+  size?: InputMaybe<IntQueryOperatorInput>;
+  prettySize?: InputMaybe<StringQueryOperatorInput>;
+  modifiedTime?: InputMaybe<DateQueryOperatorInput>;
+  accessTime?: InputMaybe<DateQueryOperatorInput>;
+  changeTime?: InputMaybe<DateQueryOperatorInput>;
+  birthTime?: InputMaybe<DateQueryOperatorInput>;
+  root?: InputMaybe<StringQueryOperatorInput>;
+  dir?: InputMaybe<StringQueryOperatorInput>;
+  base?: InputMaybe<StringQueryOperatorInput>;
+  ext?: InputMaybe<StringQueryOperatorInput>;
+  name?: InputMaybe<StringQueryOperatorInput>;
+  relativeDirectory?: InputMaybe<StringQueryOperatorInput>;
+  dev?: InputMaybe<IntQueryOperatorInput>;
+  mode?: InputMaybe<IntQueryOperatorInput>;
+  nlink?: InputMaybe<IntQueryOperatorInput>;
+  uid?: InputMaybe<IntQueryOperatorInput>;
+  gid?: InputMaybe<IntQueryOperatorInput>;
+  rdev?: InputMaybe<IntQueryOperatorInput>;
+  ino?: InputMaybe<FloatQueryOperatorInput>;
+  atimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  mtimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  ctimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  atime?: InputMaybe<DateQueryOperatorInput>;
+  mtime?: InputMaybe<DateQueryOperatorInput>;
+  ctime?: InputMaybe<DateQueryOperatorInput>;
+  birthtime?: InputMaybe<DateQueryOperatorInput>;
+  birthtimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
+
 
 export type QueryAllFileArgs = {
-  filter?: InputMaybe<FileFilterInput>
-  sort?: InputMaybe<FileSortInput>
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-}
+  filter?: InputMaybe<FileFilterInput>;
+  sort?: InputMaybe<FileSortInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+};
+
 
 export type QueryDirectoryArgs = {
-  sourceInstanceName?: InputMaybe<StringQueryOperatorInput>
-  absolutePath?: InputMaybe<StringQueryOperatorInput>
-  relativePath?: InputMaybe<StringQueryOperatorInput>
-  extension?: InputMaybe<StringQueryOperatorInput>
-  size?: InputMaybe<IntQueryOperatorInput>
-  prettySize?: InputMaybe<StringQueryOperatorInput>
-  modifiedTime?: InputMaybe<DateQueryOperatorInput>
-  accessTime?: InputMaybe<DateQueryOperatorInput>
-  changeTime?: InputMaybe<DateQueryOperatorInput>
-  birthTime?: InputMaybe<DateQueryOperatorInput>
-  root?: InputMaybe<StringQueryOperatorInput>
-  dir?: InputMaybe<StringQueryOperatorInput>
-  base?: InputMaybe<StringQueryOperatorInput>
-  ext?: InputMaybe<StringQueryOperatorInput>
-  name?: InputMaybe<StringQueryOperatorInput>
-  relativeDirectory?: InputMaybe<StringQueryOperatorInput>
-  dev?: InputMaybe<IntQueryOperatorInput>
-  mode?: InputMaybe<IntQueryOperatorInput>
-  nlink?: InputMaybe<IntQueryOperatorInput>
-  uid?: InputMaybe<IntQueryOperatorInput>
-  gid?: InputMaybe<IntQueryOperatorInput>
-  rdev?: InputMaybe<IntQueryOperatorInput>
-  ino?: InputMaybe<FloatQueryOperatorInput>
-  atimeMs?: InputMaybe<FloatQueryOperatorInput>
-  mtimeMs?: InputMaybe<FloatQueryOperatorInput>
-  ctimeMs?: InputMaybe<FloatQueryOperatorInput>
-  atime?: InputMaybe<DateQueryOperatorInput>
-  mtime?: InputMaybe<DateQueryOperatorInput>
-  ctime?: InputMaybe<DateQueryOperatorInput>
-  birthtime?: InputMaybe<DateQueryOperatorInput>
-  birthtimeMs?: InputMaybe<FloatQueryOperatorInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  sourceInstanceName?: InputMaybe<StringQueryOperatorInput>;
+  absolutePath?: InputMaybe<StringQueryOperatorInput>;
+  relativePath?: InputMaybe<StringQueryOperatorInput>;
+  extension?: InputMaybe<StringQueryOperatorInput>;
+  size?: InputMaybe<IntQueryOperatorInput>;
+  prettySize?: InputMaybe<StringQueryOperatorInput>;
+  modifiedTime?: InputMaybe<DateQueryOperatorInput>;
+  accessTime?: InputMaybe<DateQueryOperatorInput>;
+  changeTime?: InputMaybe<DateQueryOperatorInput>;
+  birthTime?: InputMaybe<DateQueryOperatorInput>;
+  root?: InputMaybe<StringQueryOperatorInput>;
+  dir?: InputMaybe<StringQueryOperatorInput>;
+  base?: InputMaybe<StringQueryOperatorInput>;
+  ext?: InputMaybe<StringQueryOperatorInput>;
+  name?: InputMaybe<StringQueryOperatorInput>;
+  relativeDirectory?: InputMaybe<StringQueryOperatorInput>;
+  dev?: InputMaybe<IntQueryOperatorInput>;
+  mode?: InputMaybe<IntQueryOperatorInput>;
+  nlink?: InputMaybe<IntQueryOperatorInput>;
+  uid?: InputMaybe<IntQueryOperatorInput>;
+  gid?: InputMaybe<IntQueryOperatorInput>;
+  rdev?: InputMaybe<IntQueryOperatorInput>;
+  ino?: InputMaybe<FloatQueryOperatorInput>;
+  atimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  mtimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  ctimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  atime?: InputMaybe<DateQueryOperatorInput>;
+  mtime?: InputMaybe<DateQueryOperatorInput>;
+  ctime?: InputMaybe<DateQueryOperatorInput>;
+  birthtime?: InputMaybe<DateQueryOperatorInput>;
+  birthtimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
+
 
 export type QueryAllDirectoryArgs = {
-  filter?: InputMaybe<DirectoryFilterInput>
-  sort?: InputMaybe<DirectorySortInput>
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-}
+  filter?: InputMaybe<DirectoryFilterInput>;
+  sort?: InputMaybe<DirectorySortInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+};
+
 
 export type QuerySiteArgs = {
-  buildTime?: InputMaybe<DateQueryOperatorInput>
-  siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>
-  polyfill?: InputMaybe<BooleanQueryOperatorInput>
-  pathPrefix?: InputMaybe<StringQueryOperatorInput>
-  jsxRuntime?: InputMaybe<StringQueryOperatorInput>
-  trailingSlash?: InputMaybe<StringQueryOperatorInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  buildTime?: InputMaybe<DateQueryOperatorInput>;
+  siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
+  assetPrefix?: InputMaybe<StringQueryOperatorInput>;
+  polyfill?: InputMaybe<BooleanQueryOperatorInput>;
+  pathPrefix?: InputMaybe<StringQueryOperatorInput>;
+  jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
+  trailingSlash?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
+
 
 export type QueryAllSiteArgs = {
-  filter?: InputMaybe<SiteFilterInput>
-  sort?: InputMaybe<SiteSortInput>
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-}
+  filter?: InputMaybe<SiteFilterInput>;
+  sort?: InputMaybe<SiteSortInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+};
+
 
 export type QuerySiteFunctionArgs = {
-  functionRoute?: InputMaybe<StringQueryOperatorInput>
-  pluginName?: InputMaybe<StringQueryOperatorInput>
-  originalAbsoluteFilePath?: InputMaybe<StringQueryOperatorInput>
-  originalRelativeFilePath?: InputMaybe<StringQueryOperatorInput>
-  relativeCompiledFilePath?: InputMaybe<StringQueryOperatorInput>
-  absoluteCompiledFilePath?: InputMaybe<StringQueryOperatorInput>
-  matchPath?: InputMaybe<StringQueryOperatorInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  functionRoute?: InputMaybe<StringQueryOperatorInput>;
+  pluginName?: InputMaybe<StringQueryOperatorInput>;
+  originalAbsoluteFilePath?: InputMaybe<StringQueryOperatorInput>;
+  originalRelativeFilePath?: InputMaybe<StringQueryOperatorInput>;
+  relativeCompiledFilePath?: InputMaybe<StringQueryOperatorInput>;
+  absoluteCompiledFilePath?: InputMaybe<StringQueryOperatorInput>;
+  matchPath?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
+
 
 export type QueryAllSiteFunctionArgs = {
-  filter?: InputMaybe<SiteFunctionFilterInput>
-  sort?: InputMaybe<SiteFunctionSortInput>
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-}
+  filter?: InputMaybe<SiteFunctionFilterInput>;
+  sort?: InputMaybe<SiteFunctionSortInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+};
+
 
 export type QuerySitePageArgs = {
-  path?: InputMaybe<StringQueryOperatorInput>
-  component?: InputMaybe<StringQueryOperatorInput>
-  internalComponentName?: InputMaybe<StringQueryOperatorInput>
-  componentChunkName?: InputMaybe<StringQueryOperatorInput>
-  matchPath?: InputMaybe<StringQueryOperatorInput>
-  pageContext?: InputMaybe<JsonQueryOperatorInput>
-  pluginCreator?: InputMaybe<SitePluginFilterInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  path?: InputMaybe<StringQueryOperatorInput>;
+  component?: InputMaybe<StringQueryOperatorInput>;
+  internalComponentName?: InputMaybe<StringQueryOperatorInput>;
+  componentChunkName?: InputMaybe<StringQueryOperatorInput>;
+  matchPath?: InputMaybe<StringQueryOperatorInput>;
+  pageContext?: InputMaybe<JsonQueryOperatorInput>;
+  pluginCreator?: InputMaybe<SitePluginFilterInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
+
 
 export type QueryAllSitePageArgs = {
-  filter?: InputMaybe<SitePageFilterInput>
-  sort?: InputMaybe<SitePageSortInput>
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-}
+  filter?: InputMaybe<SitePageFilterInput>;
+  sort?: InputMaybe<SitePageSortInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+};
+
 
 export type QuerySitePluginArgs = {
-  resolve?: InputMaybe<StringQueryOperatorInput>
-  name?: InputMaybe<StringQueryOperatorInput>
-  version?: InputMaybe<StringQueryOperatorInput>
-  nodeAPIs?: InputMaybe<StringQueryOperatorInput>
-  browserAPIs?: InputMaybe<StringQueryOperatorInput>
-  ssrAPIs?: InputMaybe<StringQueryOperatorInput>
-  pluginFilepath?: InputMaybe<StringQueryOperatorInput>
-  pluginOptions?: InputMaybe<JsonQueryOperatorInput>
-  packageJson?: InputMaybe<JsonQueryOperatorInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  resolve?: InputMaybe<StringQueryOperatorInput>;
+  name?: InputMaybe<StringQueryOperatorInput>;
+  version?: InputMaybe<StringQueryOperatorInput>;
+  nodeAPIs?: InputMaybe<StringQueryOperatorInput>;
+  browserAPIs?: InputMaybe<StringQueryOperatorInput>;
+  ssrAPIs?: InputMaybe<StringQueryOperatorInput>;
+  pluginFilepath?: InputMaybe<StringQueryOperatorInput>;
+  pluginOptions?: InputMaybe<JsonQueryOperatorInput>;
+  packageJson?: InputMaybe<JsonQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
+
 
 export type QueryAllSitePluginArgs = {
-  filter?: InputMaybe<SitePluginFilterInput>
-  sort?: InputMaybe<SitePluginSortInput>
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-}
+  filter?: InputMaybe<SitePluginFilterInput>;
+  sort?: InputMaybe<SitePluginSortInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+};
+
 
 export type QuerySiteBuildMetadataArgs = {
-  buildTime?: InputMaybe<DateQueryOperatorInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  buildTime?: InputMaybe<DateQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
+
 
 export type QueryAllSiteBuildMetadataArgs = {
-  filter?: InputMaybe<SiteBuildMetadataFilterInput>
-  sort?: InputMaybe<SiteBuildMetadataSortInput>
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-}
+  filter?: InputMaybe<SiteBuildMetadataFilterInput>;
+  sort?: InputMaybe<SiteBuildMetadataSortInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+};
+
 
 export type QueryMdxArgs = {
-  rawBody?: InputMaybe<StringQueryOperatorInput>
-  fileAbsolutePath?: InputMaybe<StringQueryOperatorInput>
-  frontmatter?: InputMaybe<MdxFrontmatterFilterInput>
-  slug?: InputMaybe<StringQueryOperatorInput>
-  body?: InputMaybe<StringQueryOperatorInput>
-  excerpt?: InputMaybe<StringQueryOperatorInput>
-  headings?: InputMaybe<MdxHeadingMdxFilterListInput>
-  html?: InputMaybe<StringQueryOperatorInput>
-  mdxAST?: InputMaybe<JsonQueryOperatorInput>
-  tableOfContents?: InputMaybe<JsonQueryOperatorInput>
-  timeToRead?: InputMaybe<IntQueryOperatorInput>
-  wordCount?: InputMaybe<MdxWordCountFilterInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  rawBody?: InputMaybe<StringQueryOperatorInput>;
+  fileAbsolutePath?: InputMaybe<StringQueryOperatorInput>;
+  frontmatter?: InputMaybe<MdxFrontmatterFilterInput>;
+  slug?: InputMaybe<StringQueryOperatorInput>;
+  body?: InputMaybe<StringQueryOperatorInput>;
+  excerpt?: InputMaybe<StringQueryOperatorInput>;
+  headings?: InputMaybe<MdxHeadingMdxFilterListInput>;
+  html?: InputMaybe<StringQueryOperatorInput>;
+  mdxAST?: InputMaybe<JsonQueryOperatorInput>;
+  tableOfContents?: InputMaybe<JsonQueryOperatorInput>;
+  timeToRead?: InputMaybe<IntQueryOperatorInput>;
+  wordCount?: InputMaybe<MdxWordCountFilterInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
+
 
 export type QueryAllMdxArgs = {
-  filter?: InputMaybe<MdxFilterInput>
-  sort?: InputMaybe<MdxSortInput>
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-}
+  filter?: InputMaybe<MdxFilterInput>;
+  sort?: InputMaybe<MdxSortInput>;
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+};
 
 export type StringQueryOperatorInput = {
-  eq?: InputMaybe<Scalars['String']>
-  ne?: InputMaybe<Scalars['String']>
-  in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>
-  nin?: InputMaybe<Array<InputMaybe<Scalars['String']>>>
-  regex?: InputMaybe<Scalars['String']>
-  glob?: InputMaybe<Scalars['String']>
-}
+  eq?: InputMaybe<Scalars['String']>;
+  ne?: InputMaybe<Scalars['String']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  nin?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  regex?: InputMaybe<Scalars['String']>;
+  glob?: InputMaybe<Scalars['String']>;
+};
 
 export type IntQueryOperatorInput = {
-  eq?: InputMaybe<Scalars['Int']>
-  ne?: InputMaybe<Scalars['Int']>
-  gt?: InputMaybe<Scalars['Int']>
-  gte?: InputMaybe<Scalars['Int']>
-  lt?: InputMaybe<Scalars['Int']>
-  lte?: InputMaybe<Scalars['Int']>
-  in?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>
-  nin?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>
-}
+  eq?: InputMaybe<Scalars['Int']>;
+  ne?: InputMaybe<Scalars['Int']>;
+  gt?: InputMaybe<Scalars['Int']>;
+  gte?: InputMaybe<Scalars['Int']>;
+  lt?: InputMaybe<Scalars['Int']>;
+  lte?: InputMaybe<Scalars['Int']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+  nin?: InputMaybe<Array<InputMaybe<Scalars['Int']>>>;
+};
 
 export type DateQueryOperatorInput = {
-  eq?: InputMaybe<Scalars['Date']>
-  ne?: InputMaybe<Scalars['Date']>
-  gt?: InputMaybe<Scalars['Date']>
-  gte?: InputMaybe<Scalars['Date']>
-  lt?: InputMaybe<Scalars['Date']>
-  lte?: InputMaybe<Scalars['Date']>
-  in?: InputMaybe<Array<InputMaybe<Scalars['Date']>>>
-  nin?: InputMaybe<Array<InputMaybe<Scalars['Date']>>>
-}
+  eq?: InputMaybe<Scalars['Date']>;
+  ne?: InputMaybe<Scalars['Date']>;
+  gt?: InputMaybe<Scalars['Date']>;
+  gte?: InputMaybe<Scalars['Date']>;
+  lt?: InputMaybe<Scalars['Date']>;
+  lte?: InputMaybe<Scalars['Date']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['Date']>>>;
+  nin?: InputMaybe<Array<InputMaybe<Scalars['Date']>>>;
+};
 
 export type FloatQueryOperatorInput = {
-  eq?: InputMaybe<Scalars['Float']>
-  ne?: InputMaybe<Scalars['Float']>
-  gt?: InputMaybe<Scalars['Float']>
-  gte?: InputMaybe<Scalars['Float']>
-  lt?: InputMaybe<Scalars['Float']>
-  lte?: InputMaybe<Scalars['Float']>
-  in?: InputMaybe<Array<InputMaybe<Scalars['Float']>>>
-  nin?: InputMaybe<Array<InputMaybe<Scalars['Float']>>>
-}
+  eq?: InputMaybe<Scalars['Float']>;
+  ne?: InputMaybe<Scalars['Float']>;
+  gt?: InputMaybe<Scalars['Float']>;
+  gte?: InputMaybe<Scalars['Float']>;
+  lt?: InputMaybe<Scalars['Float']>;
+  lte?: InputMaybe<Scalars['Float']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['Float']>>>;
+  nin?: InputMaybe<Array<InputMaybe<Scalars['Float']>>>;
+};
 
 export type NodeFilterInput = {
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
 
 export type NodeFilterListInput = {
-  elemMatch?: InputMaybe<NodeFilterInput>
-}
+  elemMatch?: InputMaybe<NodeFilterInput>;
+};
 
 export type InternalFilterInput = {
-  content?: InputMaybe<StringQueryOperatorInput>
-  contentDigest?: InputMaybe<StringQueryOperatorInput>
-  description?: InputMaybe<StringQueryOperatorInput>
-  fieldOwners?: InputMaybe<StringQueryOperatorInput>
-  ignoreType?: InputMaybe<BooleanQueryOperatorInput>
-  mediaType?: InputMaybe<StringQueryOperatorInput>
-  owner?: InputMaybe<StringQueryOperatorInput>
-  type?: InputMaybe<StringQueryOperatorInput>
-}
+  content?: InputMaybe<StringQueryOperatorInput>;
+  contentDigest?: InputMaybe<StringQueryOperatorInput>;
+  description?: InputMaybe<StringQueryOperatorInput>;
+  fieldOwners?: InputMaybe<StringQueryOperatorInput>;
+  ignoreType?: InputMaybe<BooleanQueryOperatorInput>;
+  mediaType?: InputMaybe<StringQueryOperatorInput>;
+  owner?: InputMaybe<StringQueryOperatorInput>;
+  type?: InputMaybe<StringQueryOperatorInput>;
+};
 
 export type BooleanQueryOperatorInput = {
-  eq?: InputMaybe<Scalars['Boolean']>
-  ne?: InputMaybe<Scalars['Boolean']>
-  in?: InputMaybe<Array<InputMaybe<Scalars['Boolean']>>>
-  nin?: InputMaybe<Array<InputMaybe<Scalars['Boolean']>>>
-}
+  eq?: InputMaybe<Scalars['Boolean']>;
+  ne?: InputMaybe<Scalars['Boolean']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['Boolean']>>>;
+  nin?: InputMaybe<Array<InputMaybe<Scalars['Boolean']>>>;
+};
 
 export type FileConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<FileEdge>
-  nodes: Array<File>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<FileGroupConnection>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<FileEdge>;
+  nodes: Array<File>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<FileGroupConnection>;
+};
+
 
 export type FileConnectionDistinctArgs = {
-  field: FileFieldsEnum
-}
+  field: FileFieldsEnum;
+};
+
 
 export type FileConnectionMaxArgs = {
-  field: FileFieldsEnum
-}
+  field: FileFieldsEnum;
+};
+
 
 export type FileConnectionMinArgs = {
-  field: FileFieldsEnum
-}
+  field: FileFieldsEnum;
+};
+
 
 export type FileConnectionSumArgs = {
-  field: FileFieldsEnum
-}
+  field: FileFieldsEnum;
+};
+
 
 export type FileConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: FileFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: FileFieldsEnum;
+};
 
 export type FileEdge = {
-  next?: Maybe<File>
-  node: File
-  previous?: Maybe<File>
-}
+  next?: Maybe<File>;
+  node: File;
+  previous?: Maybe<File>;
+};
 
 export type PageInfo = {
-  currentPage: Scalars['Int']
-  hasPreviousPage: Scalars['Boolean']
-  hasNextPage: Scalars['Boolean']
-  itemCount: Scalars['Int']
-  pageCount: Scalars['Int']
-  perPage?: Maybe<Scalars['Int']>
-  totalCount: Scalars['Int']
-}
+  currentPage: Scalars['Int'];
+  hasPreviousPage: Scalars['Boolean'];
+  hasNextPage: Scalars['Boolean'];
+  itemCount: Scalars['Int'];
+  pageCount: Scalars['Int'];
+  perPage?: Maybe<Scalars['Int']>;
+  totalCount: Scalars['Int'];
+};
 
 export type FileFieldsEnum =
   | 'sourceInstanceName'
@@ -826,128 +874,140 @@ export type FileFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
+  | 'internal___type';
 
 export type FileGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<FileEdge>
-  nodes: Array<File>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<FileGroupConnection>
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<FileEdge>;
+  nodes: Array<File>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<FileGroupConnection>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
 
 export type FileGroupConnectionDistinctArgs = {
-  field: FileFieldsEnum
-}
+  field: FileFieldsEnum;
+};
+
 
 export type FileGroupConnectionMaxArgs = {
-  field: FileFieldsEnum
-}
+  field: FileFieldsEnum;
+};
+
 
 export type FileGroupConnectionMinArgs = {
-  field: FileFieldsEnum
-}
+  field: FileFieldsEnum;
+};
+
 
 export type FileGroupConnectionSumArgs = {
-  field: FileFieldsEnum
-}
+  field: FileFieldsEnum;
+};
+
 
 export type FileGroupConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: FileFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: FileFieldsEnum;
+};
 
 export type FileFilterInput = {
-  sourceInstanceName?: InputMaybe<StringQueryOperatorInput>
-  absolutePath?: InputMaybe<StringQueryOperatorInput>
-  relativePath?: InputMaybe<StringQueryOperatorInput>
-  extension?: InputMaybe<StringQueryOperatorInput>
-  size?: InputMaybe<IntQueryOperatorInput>
-  prettySize?: InputMaybe<StringQueryOperatorInput>
-  modifiedTime?: InputMaybe<DateQueryOperatorInput>
-  accessTime?: InputMaybe<DateQueryOperatorInput>
-  changeTime?: InputMaybe<DateQueryOperatorInput>
-  birthTime?: InputMaybe<DateQueryOperatorInput>
-  root?: InputMaybe<StringQueryOperatorInput>
-  dir?: InputMaybe<StringQueryOperatorInput>
-  base?: InputMaybe<StringQueryOperatorInput>
-  ext?: InputMaybe<StringQueryOperatorInput>
-  name?: InputMaybe<StringQueryOperatorInput>
-  relativeDirectory?: InputMaybe<StringQueryOperatorInput>
-  dev?: InputMaybe<IntQueryOperatorInput>
-  mode?: InputMaybe<IntQueryOperatorInput>
-  nlink?: InputMaybe<IntQueryOperatorInput>
-  uid?: InputMaybe<IntQueryOperatorInput>
-  gid?: InputMaybe<IntQueryOperatorInput>
-  rdev?: InputMaybe<IntQueryOperatorInput>
-  ino?: InputMaybe<FloatQueryOperatorInput>
-  atimeMs?: InputMaybe<FloatQueryOperatorInput>
-  mtimeMs?: InputMaybe<FloatQueryOperatorInput>
-  ctimeMs?: InputMaybe<FloatQueryOperatorInput>
-  atime?: InputMaybe<DateQueryOperatorInput>
-  mtime?: InputMaybe<DateQueryOperatorInput>
-  ctime?: InputMaybe<DateQueryOperatorInput>
-  birthtime?: InputMaybe<DateQueryOperatorInput>
-  birthtimeMs?: InputMaybe<FloatQueryOperatorInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  sourceInstanceName?: InputMaybe<StringQueryOperatorInput>;
+  absolutePath?: InputMaybe<StringQueryOperatorInput>;
+  relativePath?: InputMaybe<StringQueryOperatorInput>;
+  extension?: InputMaybe<StringQueryOperatorInput>;
+  size?: InputMaybe<IntQueryOperatorInput>;
+  prettySize?: InputMaybe<StringQueryOperatorInput>;
+  modifiedTime?: InputMaybe<DateQueryOperatorInput>;
+  accessTime?: InputMaybe<DateQueryOperatorInput>;
+  changeTime?: InputMaybe<DateQueryOperatorInput>;
+  birthTime?: InputMaybe<DateQueryOperatorInput>;
+  root?: InputMaybe<StringQueryOperatorInput>;
+  dir?: InputMaybe<StringQueryOperatorInput>;
+  base?: InputMaybe<StringQueryOperatorInput>;
+  ext?: InputMaybe<StringQueryOperatorInput>;
+  name?: InputMaybe<StringQueryOperatorInput>;
+  relativeDirectory?: InputMaybe<StringQueryOperatorInput>;
+  dev?: InputMaybe<IntQueryOperatorInput>;
+  mode?: InputMaybe<IntQueryOperatorInput>;
+  nlink?: InputMaybe<IntQueryOperatorInput>;
+  uid?: InputMaybe<IntQueryOperatorInput>;
+  gid?: InputMaybe<IntQueryOperatorInput>;
+  rdev?: InputMaybe<IntQueryOperatorInput>;
+  ino?: InputMaybe<FloatQueryOperatorInput>;
+  atimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  mtimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  ctimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  atime?: InputMaybe<DateQueryOperatorInput>;
+  mtime?: InputMaybe<DateQueryOperatorInput>;
+  ctime?: InputMaybe<DateQueryOperatorInput>;
+  birthtime?: InputMaybe<DateQueryOperatorInput>;
+  birthtimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
 
 export type FileSortInput = {
-  fields?: InputMaybe<Array<InputMaybe<FileFieldsEnum>>>
-  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>
-}
+  fields?: InputMaybe<Array<InputMaybe<FileFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
 
-export type SortOrderEnum = 'ASC' | 'DESC'
+export type SortOrderEnum =
+  | 'ASC'
+  | 'DESC';
 
 export type DirectoryConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<DirectoryEdge>
-  nodes: Array<Directory>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<DirectoryGroupConnection>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<DirectoryEdge>;
+  nodes: Array<Directory>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<DirectoryGroupConnection>;
+};
+
 
 export type DirectoryConnectionDistinctArgs = {
-  field: DirectoryFieldsEnum
-}
+  field: DirectoryFieldsEnum;
+};
+
 
 export type DirectoryConnectionMaxArgs = {
-  field: DirectoryFieldsEnum
-}
+  field: DirectoryFieldsEnum;
+};
+
 
 export type DirectoryConnectionMinArgs = {
-  field: DirectoryFieldsEnum
-}
+  field: DirectoryFieldsEnum;
+};
+
 
 export type DirectoryConnectionSumArgs = {
-  field: DirectoryFieldsEnum
-}
+  field: DirectoryFieldsEnum;
+};
+
 
 export type DirectoryConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: DirectoryFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: DirectoryFieldsEnum;
+};
 
 export type DirectoryEdge = {
-  next?: Maybe<Directory>
-  node: Directory
-  previous?: Maybe<Directory>
-}
+  next?: Maybe<Directory>;
+  node: Directory;
+  previous?: Maybe<Directory>;
+};
 
 export type DirectoryFieldsEnum =
   | 'sourceInstanceName'
@@ -1066,133 +1126,143 @@ export type DirectoryFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
+  | 'internal___type';
 
 export type DirectoryGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<DirectoryEdge>
-  nodes: Array<Directory>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<DirectoryGroupConnection>
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<DirectoryEdge>;
+  nodes: Array<Directory>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<DirectoryGroupConnection>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
 
 export type DirectoryGroupConnectionDistinctArgs = {
-  field: DirectoryFieldsEnum
-}
+  field: DirectoryFieldsEnum;
+};
+
 
 export type DirectoryGroupConnectionMaxArgs = {
-  field: DirectoryFieldsEnum
-}
+  field: DirectoryFieldsEnum;
+};
+
 
 export type DirectoryGroupConnectionMinArgs = {
-  field: DirectoryFieldsEnum
-}
+  field: DirectoryFieldsEnum;
+};
+
 
 export type DirectoryGroupConnectionSumArgs = {
-  field: DirectoryFieldsEnum
-}
+  field: DirectoryFieldsEnum;
+};
+
 
 export type DirectoryGroupConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: DirectoryFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: DirectoryFieldsEnum;
+};
 
 export type DirectoryFilterInput = {
-  sourceInstanceName?: InputMaybe<StringQueryOperatorInput>
-  absolutePath?: InputMaybe<StringQueryOperatorInput>
-  relativePath?: InputMaybe<StringQueryOperatorInput>
-  extension?: InputMaybe<StringQueryOperatorInput>
-  size?: InputMaybe<IntQueryOperatorInput>
-  prettySize?: InputMaybe<StringQueryOperatorInput>
-  modifiedTime?: InputMaybe<DateQueryOperatorInput>
-  accessTime?: InputMaybe<DateQueryOperatorInput>
-  changeTime?: InputMaybe<DateQueryOperatorInput>
-  birthTime?: InputMaybe<DateQueryOperatorInput>
-  root?: InputMaybe<StringQueryOperatorInput>
-  dir?: InputMaybe<StringQueryOperatorInput>
-  base?: InputMaybe<StringQueryOperatorInput>
-  ext?: InputMaybe<StringQueryOperatorInput>
-  name?: InputMaybe<StringQueryOperatorInput>
-  relativeDirectory?: InputMaybe<StringQueryOperatorInput>
-  dev?: InputMaybe<IntQueryOperatorInput>
-  mode?: InputMaybe<IntQueryOperatorInput>
-  nlink?: InputMaybe<IntQueryOperatorInput>
-  uid?: InputMaybe<IntQueryOperatorInput>
-  gid?: InputMaybe<IntQueryOperatorInput>
-  rdev?: InputMaybe<IntQueryOperatorInput>
-  ino?: InputMaybe<FloatQueryOperatorInput>
-  atimeMs?: InputMaybe<FloatQueryOperatorInput>
-  mtimeMs?: InputMaybe<FloatQueryOperatorInput>
-  ctimeMs?: InputMaybe<FloatQueryOperatorInput>
-  atime?: InputMaybe<DateQueryOperatorInput>
-  mtime?: InputMaybe<DateQueryOperatorInput>
-  ctime?: InputMaybe<DateQueryOperatorInput>
-  birthtime?: InputMaybe<DateQueryOperatorInput>
-  birthtimeMs?: InputMaybe<FloatQueryOperatorInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  sourceInstanceName?: InputMaybe<StringQueryOperatorInput>;
+  absolutePath?: InputMaybe<StringQueryOperatorInput>;
+  relativePath?: InputMaybe<StringQueryOperatorInput>;
+  extension?: InputMaybe<StringQueryOperatorInput>;
+  size?: InputMaybe<IntQueryOperatorInput>;
+  prettySize?: InputMaybe<StringQueryOperatorInput>;
+  modifiedTime?: InputMaybe<DateQueryOperatorInput>;
+  accessTime?: InputMaybe<DateQueryOperatorInput>;
+  changeTime?: InputMaybe<DateQueryOperatorInput>;
+  birthTime?: InputMaybe<DateQueryOperatorInput>;
+  root?: InputMaybe<StringQueryOperatorInput>;
+  dir?: InputMaybe<StringQueryOperatorInput>;
+  base?: InputMaybe<StringQueryOperatorInput>;
+  ext?: InputMaybe<StringQueryOperatorInput>;
+  name?: InputMaybe<StringQueryOperatorInput>;
+  relativeDirectory?: InputMaybe<StringQueryOperatorInput>;
+  dev?: InputMaybe<IntQueryOperatorInput>;
+  mode?: InputMaybe<IntQueryOperatorInput>;
+  nlink?: InputMaybe<IntQueryOperatorInput>;
+  uid?: InputMaybe<IntQueryOperatorInput>;
+  gid?: InputMaybe<IntQueryOperatorInput>;
+  rdev?: InputMaybe<IntQueryOperatorInput>;
+  ino?: InputMaybe<FloatQueryOperatorInput>;
+  atimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  mtimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  ctimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  atime?: InputMaybe<DateQueryOperatorInput>;
+  mtime?: InputMaybe<DateQueryOperatorInput>;
+  ctime?: InputMaybe<DateQueryOperatorInput>;
+  birthtime?: InputMaybe<DateQueryOperatorInput>;
+  birthtimeMs?: InputMaybe<FloatQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
 
 export type DirectorySortInput = {
-  fields?: InputMaybe<Array<InputMaybe<DirectoryFieldsEnum>>>
-  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>
-}
+  fields?: InputMaybe<Array<InputMaybe<DirectoryFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
 
 export type SiteSiteMetadataFilterInput = {
-  title?: InputMaybe<StringQueryOperatorInput>
-  description?: InputMaybe<StringQueryOperatorInput>
-  siteUrl?: InputMaybe<StringQueryOperatorInput>
-  titleTemplate?: InputMaybe<StringQueryOperatorInput>
-}
+  title?: InputMaybe<StringQueryOperatorInput>;
+  description?: InputMaybe<StringQueryOperatorInput>;
+  siteUrl?: InputMaybe<StringQueryOperatorInput>;
+  titleTemplate?: InputMaybe<StringQueryOperatorInput>;
+};
 
 export type SiteConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SiteEdge>
-  nodes: Array<Site>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<SiteGroupConnection>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<SiteEdge>;
+  nodes: Array<Site>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<SiteGroupConnection>;
+};
+
 
 export type SiteConnectionDistinctArgs = {
-  field: SiteFieldsEnum
-}
+  field: SiteFieldsEnum;
+};
+
 
 export type SiteConnectionMaxArgs = {
-  field: SiteFieldsEnum
-}
+  field: SiteFieldsEnum;
+};
+
 
 export type SiteConnectionMinArgs = {
-  field: SiteFieldsEnum
-}
+  field: SiteFieldsEnum;
+};
+
 
 export type SiteConnectionSumArgs = {
-  field: SiteFieldsEnum
-}
+  field: SiteFieldsEnum;
+};
+
 
 export type SiteConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: SiteFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: SiteFieldsEnum;
+};
 
 export type SiteEdge = {
-  next?: Maybe<Site>
-  node: Site
-  previous?: Maybe<Site>
-}
+  next?: Maybe<Site>;
+  node: Site;
+  previous?: Maybe<Site>;
+};
 
 export type SiteFieldsEnum =
   | 'buildTime'
@@ -1200,6 +1270,7 @@ export type SiteFieldsEnum =
   | 'siteMetadata___description'
   | 'siteMetadata___siteUrl'
   | 'siteMetadata___titleTemplate'
+  | 'assetPrefix'
   | 'polyfill'
   | 'pathPrefix'
   | 'jsxRuntime'
@@ -1289,101 +1360,112 @@ export type SiteFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
+  | 'internal___type';
 
 export type SiteGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SiteEdge>
-  nodes: Array<Site>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<SiteGroupConnection>
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<SiteEdge>;
+  nodes: Array<Site>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<SiteGroupConnection>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
 
 export type SiteGroupConnectionDistinctArgs = {
-  field: SiteFieldsEnum
-}
+  field: SiteFieldsEnum;
+};
+
 
 export type SiteGroupConnectionMaxArgs = {
-  field: SiteFieldsEnum
-}
+  field: SiteFieldsEnum;
+};
+
 
 export type SiteGroupConnectionMinArgs = {
-  field: SiteFieldsEnum
-}
+  field: SiteFieldsEnum;
+};
+
 
 export type SiteGroupConnectionSumArgs = {
-  field: SiteFieldsEnum
-}
+  field: SiteFieldsEnum;
+};
+
 
 export type SiteGroupConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: SiteFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: SiteFieldsEnum;
+};
 
 export type SiteFilterInput = {
-  buildTime?: InputMaybe<DateQueryOperatorInput>
-  siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>
-  polyfill?: InputMaybe<BooleanQueryOperatorInput>
-  pathPrefix?: InputMaybe<StringQueryOperatorInput>
-  jsxRuntime?: InputMaybe<StringQueryOperatorInput>
-  trailingSlash?: InputMaybe<StringQueryOperatorInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  buildTime?: InputMaybe<DateQueryOperatorInput>;
+  siteMetadata?: InputMaybe<SiteSiteMetadataFilterInput>;
+  assetPrefix?: InputMaybe<StringQueryOperatorInput>;
+  polyfill?: InputMaybe<BooleanQueryOperatorInput>;
+  pathPrefix?: InputMaybe<StringQueryOperatorInput>;
+  jsxRuntime?: InputMaybe<StringQueryOperatorInput>;
+  trailingSlash?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
 
 export type SiteSortInput = {
-  fields?: InputMaybe<Array<InputMaybe<SiteFieldsEnum>>>
-  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>
-}
+  fields?: InputMaybe<Array<InputMaybe<SiteFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
 
 export type SiteFunctionConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SiteFunctionEdge>
-  nodes: Array<SiteFunction>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<SiteFunctionGroupConnection>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<SiteFunctionEdge>;
+  nodes: Array<SiteFunction>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<SiteFunctionGroupConnection>;
+};
+
 
 export type SiteFunctionConnectionDistinctArgs = {
-  field: SiteFunctionFieldsEnum
-}
+  field: SiteFunctionFieldsEnum;
+};
+
 
 export type SiteFunctionConnectionMaxArgs = {
-  field: SiteFunctionFieldsEnum
-}
+  field: SiteFunctionFieldsEnum;
+};
+
 
 export type SiteFunctionConnectionMinArgs = {
-  field: SiteFunctionFieldsEnum
-}
+  field: SiteFunctionFieldsEnum;
+};
+
 
 export type SiteFunctionConnectionSumArgs = {
-  field: SiteFunctionFieldsEnum
-}
+  field: SiteFunctionFieldsEnum;
+};
+
 
 export type SiteFunctionConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: SiteFunctionFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: SiteFunctionFieldsEnum;
+};
 
 export type SiteFunctionEdge = {
-  next?: Maybe<SiteFunction>
-  node: SiteFunction
-  previous?: Maybe<SiteFunction>
-}
+  next?: Maybe<SiteFunction>;
+  node: SiteFunction;
+  previous?: Maybe<SiteFunction>;
+};
 
 export type SiteFunctionFieldsEnum =
   | 'functionRoute'
@@ -1478,127 +1560,137 @@ export type SiteFunctionFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
+  | 'internal___type';
 
 export type SiteFunctionGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SiteFunctionEdge>
-  nodes: Array<SiteFunction>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<SiteFunctionGroupConnection>
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<SiteFunctionEdge>;
+  nodes: Array<SiteFunction>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<SiteFunctionGroupConnection>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
 
 export type SiteFunctionGroupConnectionDistinctArgs = {
-  field: SiteFunctionFieldsEnum
-}
+  field: SiteFunctionFieldsEnum;
+};
+
 
 export type SiteFunctionGroupConnectionMaxArgs = {
-  field: SiteFunctionFieldsEnum
-}
+  field: SiteFunctionFieldsEnum;
+};
+
 
 export type SiteFunctionGroupConnectionMinArgs = {
-  field: SiteFunctionFieldsEnum
-}
+  field: SiteFunctionFieldsEnum;
+};
+
 
 export type SiteFunctionGroupConnectionSumArgs = {
-  field: SiteFunctionFieldsEnum
-}
+  field: SiteFunctionFieldsEnum;
+};
+
 
 export type SiteFunctionGroupConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: SiteFunctionFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: SiteFunctionFieldsEnum;
+};
 
 export type SiteFunctionFilterInput = {
-  functionRoute?: InputMaybe<StringQueryOperatorInput>
-  pluginName?: InputMaybe<StringQueryOperatorInput>
-  originalAbsoluteFilePath?: InputMaybe<StringQueryOperatorInput>
-  originalRelativeFilePath?: InputMaybe<StringQueryOperatorInput>
-  relativeCompiledFilePath?: InputMaybe<StringQueryOperatorInput>
-  absoluteCompiledFilePath?: InputMaybe<StringQueryOperatorInput>
-  matchPath?: InputMaybe<StringQueryOperatorInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  functionRoute?: InputMaybe<StringQueryOperatorInput>;
+  pluginName?: InputMaybe<StringQueryOperatorInput>;
+  originalAbsoluteFilePath?: InputMaybe<StringQueryOperatorInput>;
+  originalRelativeFilePath?: InputMaybe<StringQueryOperatorInput>;
+  relativeCompiledFilePath?: InputMaybe<StringQueryOperatorInput>;
+  absoluteCompiledFilePath?: InputMaybe<StringQueryOperatorInput>;
+  matchPath?: InputMaybe<StringQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
 
 export type SiteFunctionSortInput = {
-  fields?: InputMaybe<Array<InputMaybe<SiteFunctionFieldsEnum>>>
-  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>
-}
+  fields?: InputMaybe<Array<InputMaybe<SiteFunctionFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
 
 export type JsonQueryOperatorInput = {
-  eq?: InputMaybe<Scalars['JSON']>
-  ne?: InputMaybe<Scalars['JSON']>
-  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']>>>
-  nin?: InputMaybe<Array<InputMaybe<Scalars['JSON']>>>
-  regex?: InputMaybe<Scalars['JSON']>
-  glob?: InputMaybe<Scalars['JSON']>
-}
+  eq?: InputMaybe<Scalars['JSON']>;
+  ne?: InputMaybe<Scalars['JSON']>;
+  in?: InputMaybe<Array<InputMaybe<Scalars['JSON']>>>;
+  nin?: InputMaybe<Array<InputMaybe<Scalars['JSON']>>>;
+  regex?: InputMaybe<Scalars['JSON']>;
+  glob?: InputMaybe<Scalars['JSON']>;
+};
 
 export type SitePluginFilterInput = {
-  resolve?: InputMaybe<StringQueryOperatorInput>
-  name?: InputMaybe<StringQueryOperatorInput>
-  version?: InputMaybe<StringQueryOperatorInput>
-  nodeAPIs?: InputMaybe<StringQueryOperatorInput>
-  browserAPIs?: InputMaybe<StringQueryOperatorInput>
-  ssrAPIs?: InputMaybe<StringQueryOperatorInput>
-  pluginFilepath?: InputMaybe<StringQueryOperatorInput>
-  pluginOptions?: InputMaybe<JsonQueryOperatorInput>
-  packageJson?: InputMaybe<JsonQueryOperatorInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  resolve?: InputMaybe<StringQueryOperatorInput>;
+  name?: InputMaybe<StringQueryOperatorInput>;
+  version?: InputMaybe<StringQueryOperatorInput>;
+  nodeAPIs?: InputMaybe<StringQueryOperatorInput>;
+  browserAPIs?: InputMaybe<StringQueryOperatorInput>;
+  ssrAPIs?: InputMaybe<StringQueryOperatorInput>;
+  pluginFilepath?: InputMaybe<StringQueryOperatorInput>;
+  pluginOptions?: InputMaybe<JsonQueryOperatorInput>;
+  packageJson?: InputMaybe<JsonQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
 
 export type SitePageConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SitePageEdge>
-  nodes: Array<SitePage>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<SitePageGroupConnection>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<SitePageEdge>;
+  nodes: Array<SitePage>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<SitePageGroupConnection>;
+};
+
 
 export type SitePageConnectionDistinctArgs = {
-  field: SitePageFieldsEnum
-}
+  field: SitePageFieldsEnum;
+};
+
 
 export type SitePageConnectionMaxArgs = {
-  field: SitePageFieldsEnum
-}
+  field: SitePageFieldsEnum;
+};
+
 
 export type SitePageConnectionMinArgs = {
-  field: SitePageFieldsEnum
-}
+  field: SitePageFieldsEnum;
+};
+
 
 export type SitePageConnectionSumArgs = {
-  field: SitePageFieldsEnum
-}
+  field: SitePageFieldsEnum;
+};
+
 
 export type SitePageConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: SitePageFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: SitePageFieldsEnum;
+};
 
 export type SitePageEdge = {
-  next?: Maybe<SitePage>
-  node: SitePage
-  previous?: Maybe<SitePage>
-}
+  next?: Maybe<SitePage>;
+  node: SitePage;
+  previous?: Maybe<SitePage>;
+};
 
 export type SitePageFieldsEnum =
   | 'path'
@@ -1739,102 +1831,112 @@ export type SitePageFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
+  | 'internal___type';
 
 export type SitePageGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SitePageEdge>
-  nodes: Array<SitePage>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<SitePageGroupConnection>
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<SitePageEdge>;
+  nodes: Array<SitePage>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<SitePageGroupConnection>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
 
 export type SitePageGroupConnectionDistinctArgs = {
-  field: SitePageFieldsEnum
-}
+  field: SitePageFieldsEnum;
+};
+
 
 export type SitePageGroupConnectionMaxArgs = {
-  field: SitePageFieldsEnum
-}
+  field: SitePageFieldsEnum;
+};
+
 
 export type SitePageGroupConnectionMinArgs = {
-  field: SitePageFieldsEnum
-}
+  field: SitePageFieldsEnum;
+};
+
 
 export type SitePageGroupConnectionSumArgs = {
-  field: SitePageFieldsEnum
-}
+  field: SitePageFieldsEnum;
+};
+
 
 export type SitePageGroupConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: SitePageFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: SitePageFieldsEnum;
+};
 
 export type SitePageFilterInput = {
-  path?: InputMaybe<StringQueryOperatorInput>
-  component?: InputMaybe<StringQueryOperatorInput>
-  internalComponentName?: InputMaybe<StringQueryOperatorInput>
-  componentChunkName?: InputMaybe<StringQueryOperatorInput>
-  matchPath?: InputMaybe<StringQueryOperatorInput>
-  pageContext?: InputMaybe<JsonQueryOperatorInput>
-  pluginCreator?: InputMaybe<SitePluginFilterInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  path?: InputMaybe<StringQueryOperatorInput>;
+  component?: InputMaybe<StringQueryOperatorInput>;
+  internalComponentName?: InputMaybe<StringQueryOperatorInput>;
+  componentChunkName?: InputMaybe<StringQueryOperatorInput>;
+  matchPath?: InputMaybe<StringQueryOperatorInput>;
+  pageContext?: InputMaybe<JsonQueryOperatorInput>;
+  pluginCreator?: InputMaybe<SitePluginFilterInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
 
 export type SitePageSortInput = {
-  fields?: InputMaybe<Array<InputMaybe<SitePageFieldsEnum>>>
-  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>
-}
+  fields?: InputMaybe<Array<InputMaybe<SitePageFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
 
 export type SitePluginConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SitePluginEdge>
-  nodes: Array<SitePlugin>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<SitePluginGroupConnection>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<SitePluginEdge>;
+  nodes: Array<SitePlugin>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<SitePluginGroupConnection>;
+};
+
 
 export type SitePluginConnectionDistinctArgs = {
-  field: SitePluginFieldsEnum
-}
+  field: SitePluginFieldsEnum;
+};
+
 
 export type SitePluginConnectionMaxArgs = {
-  field: SitePluginFieldsEnum
-}
+  field: SitePluginFieldsEnum;
+};
+
 
 export type SitePluginConnectionMinArgs = {
-  field: SitePluginFieldsEnum
-}
+  field: SitePluginFieldsEnum;
+};
+
 
 export type SitePluginConnectionSumArgs = {
-  field: SitePluginFieldsEnum
-}
+  field: SitePluginFieldsEnum;
+};
+
 
 export type SitePluginConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: SitePluginFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: SitePluginFieldsEnum;
+};
 
 export type SitePluginEdge = {
-  next?: Maybe<SitePlugin>
-  node: SitePlugin
-  previous?: Maybe<SitePlugin>
-}
+  next?: Maybe<SitePlugin>;
+  node: SitePlugin;
+  previous?: Maybe<SitePlugin>;
+};
 
 export type SitePluginFieldsEnum =
   | 'resolve'
@@ -1931,88 +2033,98 @@ export type SitePluginFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
+  | 'internal___type';
 
 export type SitePluginGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SitePluginEdge>
-  nodes: Array<SitePlugin>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<SitePluginGroupConnection>
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<SitePluginEdge>;
+  nodes: Array<SitePlugin>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<SitePluginGroupConnection>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
 
 export type SitePluginGroupConnectionDistinctArgs = {
-  field: SitePluginFieldsEnum
-}
+  field: SitePluginFieldsEnum;
+};
+
 
 export type SitePluginGroupConnectionMaxArgs = {
-  field: SitePluginFieldsEnum
-}
+  field: SitePluginFieldsEnum;
+};
+
 
 export type SitePluginGroupConnectionMinArgs = {
-  field: SitePluginFieldsEnum
-}
+  field: SitePluginFieldsEnum;
+};
+
 
 export type SitePluginGroupConnectionSumArgs = {
-  field: SitePluginFieldsEnum
-}
+  field: SitePluginFieldsEnum;
+};
+
 
 export type SitePluginGroupConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: SitePluginFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: SitePluginFieldsEnum;
+};
 
 export type SitePluginSortInput = {
-  fields?: InputMaybe<Array<InputMaybe<SitePluginFieldsEnum>>>
-  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>
-}
+  fields?: InputMaybe<Array<InputMaybe<SitePluginFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
 
 export type SiteBuildMetadataConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SiteBuildMetadataEdge>
-  nodes: Array<SiteBuildMetadata>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<SiteBuildMetadataGroupConnection>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<SiteBuildMetadataEdge>;
+  nodes: Array<SiteBuildMetadata>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<SiteBuildMetadataGroupConnection>;
+};
+
 
 export type SiteBuildMetadataConnectionDistinctArgs = {
-  field: SiteBuildMetadataFieldsEnum
-}
+  field: SiteBuildMetadataFieldsEnum;
+};
+
 
 export type SiteBuildMetadataConnectionMaxArgs = {
-  field: SiteBuildMetadataFieldsEnum
-}
+  field: SiteBuildMetadataFieldsEnum;
+};
+
 
 export type SiteBuildMetadataConnectionMinArgs = {
-  field: SiteBuildMetadataFieldsEnum
-}
+  field: SiteBuildMetadataFieldsEnum;
+};
+
 
 export type SiteBuildMetadataConnectionSumArgs = {
-  field: SiteBuildMetadataFieldsEnum
-}
+  field: SiteBuildMetadataFieldsEnum;
+};
+
 
 export type SiteBuildMetadataConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: SiteBuildMetadataFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: SiteBuildMetadataFieldsEnum;
+};
 
 export type SiteBuildMetadataEdge = {
-  next?: Maybe<SiteBuildMetadata>
-  node: SiteBuildMetadata
-  previous?: Maybe<SiteBuildMetadata>
-}
+  next?: Maybe<SiteBuildMetadata>;
+  node: SiteBuildMetadata;
+  previous?: Maybe<SiteBuildMetadata>;
+};
 
 export type SiteBuildMetadataFieldsEnum =
   | 'buildTime'
@@ -2101,115 +2213,125 @@ export type SiteBuildMetadataFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
+  | 'internal___type';
 
 export type SiteBuildMetadataGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<SiteBuildMetadataEdge>
-  nodes: Array<SiteBuildMetadata>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<SiteBuildMetadataGroupConnection>
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<SiteBuildMetadataEdge>;
+  nodes: Array<SiteBuildMetadata>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<SiteBuildMetadataGroupConnection>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
 
 export type SiteBuildMetadataGroupConnectionDistinctArgs = {
-  field: SiteBuildMetadataFieldsEnum
-}
+  field: SiteBuildMetadataFieldsEnum;
+};
+
 
 export type SiteBuildMetadataGroupConnectionMaxArgs = {
-  field: SiteBuildMetadataFieldsEnum
-}
+  field: SiteBuildMetadataFieldsEnum;
+};
+
 
 export type SiteBuildMetadataGroupConnectionMinArgs = {
-  field: SiteBuildMetadataFieldsEnum
-}
+  field: SiteBuildMetadataFieldsEnum;
+};
+
 
 export type SiteBuildMetadataGroupConnectionSumArgs = {
-  field: SiteBuildMetadataFieldsEnum
-}
+  field: SiteBuildMetadataFieldsEnum;
+};
+
 
 export type SiteBuildMetadataGroupConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: SiteBuildMetadataFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: SiteBuildMetadataFieldsEnum;
+};
 
 export type SiteBuildMetadataFilterInput = {
-  buildTime?: InputMaybe<DateQueryOperatorInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  buildTime?: InputMaybe<DateQueryOperatorInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
 
 export type SiteBuildMetadataSortInput = {
-  fields?: InputMaybe<Array<InputMaybe<SiteBuildMetadataFieldsEnum>>>
-  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>
-}
+  fields?: InputMaybe<Array<InputMaybe<SiteBuildMetadataFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
 
 export type MdxFrontmatterFilterInput = {
-  title?: InputMaybe<StringQueryOperatorInput>
-}
+  title?: InputMaybe<StringQueryOperatorInput>;
+};
 
 export type MdxHeadingMdxFilterListInput = {
-  elemMatch?: InputMaybe<MdxHeadingMdxFilterInput>
-}
+  elemMatch?: InputMaybe<MdxHeadingMdxFilterInput>;
+};
 
 export type MdxHeadingMdxFilterInput = {
-  value?: InputMaybe<StringQueryOperatorInput>
-  depth?: InputMaybe<IntQueryOperatorInput>
-}
+  value?: InputMaybe<StringQueryOperatorInput>;
+  depth?: InputMaybe<IntQueryOperatorInput>;
+};
 
 export type MdxWordCountFilterInput = {
-  paragraphs?: InputMaybe<IntQueryOperatorInput>
-  sentences?: InputMaybe<IntQueryOperatorInput>
-  words?: InputMaybe<IntQueryOperatorInput>
-}
+  paragraphs?: InputMaybe<IntQueryOperatorInput>;
+  sentences?: InputMaybe<IntQueryOperatorInput>;
+  words?: InputMaybe<IntQueryOperatorInput>;
+};
 
 export type MdxConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<MdxEdge>
-  nodes: Array<Mdx>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<MdxGroupConnection>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<MdxEdge>;
+  nodes: Array<Mdx>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<MdxGroupConnection>;
+};
+
 
 export type MdxConnectionDistinctArgs = {
-  field: MdxFieldsEnum
-}
+  field: MdxFieldsEnum;
+};
+
 
 export type MdxConnectionMaxArgs = {
-  field: MdxFieldsEnum
-}
+  field: MdxFieldsEnum;
+};
+
 
 export type MdxConnectionMinArgs = {
-  field: MdxFieldsEnum
-}
+  field: MdxFieldsEnum;
+};
+
 
 export type MdxConnectionSumArgs = {
-  field: MdxFieldsEnum
-}
+  field: MdxFieldsEnum;
+};
+
 
 export type MdxConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: MdxFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: MdxFieldsEnum;
+};
 
 export type MdxEdge = {
-  next?: Maybe<Mdx>
-  node: Mdx
-  previous?: Maybe<Mdx>
-}
+  next?: Maybe<Mdx>;
+  node: Mdx;
+  previous?: Maybe<Mdx>;
+};
 
 export type MdxFieldsEnum =
   | 'rawBody'
@@ -2313,83 +2435,74 @@ export type MdxFieldsEnum =
   | 'internal___ignoreType'
   | 'internal___mediaType'
   | 'internal___owner'
-  | 'internal___type'
+  | 'internal___type';
 
 export type MdxGroupConnection = {
-  totalCount: Scalars['Int']
-  edges: Array<MdxEdge>
-  nodes: Array<Mdx>
-  pageInfo: PageInfo
-  distinct: Array<Scalars['String']>
-  max?: Maybe<Scalars['Float']>
-  min?: Maybe<Scalars['Float']>
-  sum?: Maybe<Scalars['Float']>
-  group: Array<MdxGroupConnection>
-  field: Scalars['String']
-  fieldValue?: Maybe<Scalars['String']>
-}
+  totalCount: Scalars['Int'];
+  edges: Array<MdxEdge>;
+  nodes: Array<Mdx>;
+  pageInfo: PageInfo;
+  distinct: Array<Scalars['String']>;
+  max?: Maybe<Scalars['Float']>;
+  min?: Maybe<Scalars['Float']>;
+  sum?: Maybe<Scalars['Float']>;
+  group: Array<MdxGroupConnection>;
+  field: Scalars['String'];
+  fieldValue?: Maybe<Scalars['String']>;
+};
+
 
 export type MdxGroupConnectionDistinctArgs = {
-  field: MdxFieldsEnum
-}
+  field: MdxFieldsEnum;
+};
+
 
 export type MdxGroupConnectionMaxArgs = {
-  field: MdxFieldsEnum
-}
+  field: MdxFieldsEnum;
+};
+
 
 export type MdxGroupConnectionMinArgs = {
-  field: MdxFieldsEnum
-}
+  field: MdxFieldsEnum;
+};
+
 
 export type MdxGroupConnectionSumArgs = {
-  field: MdxFieldsEnum
-}
+  field: MdxFieldsEnum;
+};
+
 
 export type MdxGroupConnectionGroupArgs = {
-  skip?: InputMaybe<Scalars['Int']>
-  limit?: InputMaybe<Scalars['Int']>
-  field: MdxFieldsEnum
-}
+  skip?: InputMaybe<Scalars['Int']>;
+  limit?: InputMaybe<Scalars['Int']>;
+  field: MdxFieldsEnum;
+};
 
 export type MdxFilterInput = {
-  rawBody?: InputMaybe<StringQueryOperatorInput>
-  fileAbsolutePath?: InputMaybe<StringQueryOperatorInput>
-  frontmatter?: InputMaybe<MdxFrontmatterFilterInput>
-  slug?: InputMaybe<StringQueryOperatorInput>
-  body?: InputMaybe<StringQueryOperatorInput>
-  excerpt?: InputMaybe<StringQueryOperatorInput>
-  headings?: InputMaybe<MdxHeadingMdxFilterListInput>
-  html?: InputMaybe<StringQueryOperatorInput>
-  mdxAST?: InputMaybe<JsonQueryOperatorInput>
-  tableOfContents?: InputMaybe<JsonQueryOperatorInput>
-  timeToRead?: InputMaybe<IntQueryOperatorInput>
-  wordCount?: InputMaybe<MdxWordCountFilterInput>
-  id?: InputMaybe<StringQueryOperatorInput>
-  parent?: InputMaybe<NodeFilterInput>
-  children?: InputMaybe<NodeFilterListInput>
-  internal?: InputMaybe<InternalFilterInput>
-}
+  rawBody?: InputMaybe<StringQueryOperatorInput>;
+  fileAbsolutePath?: InputMaybe<StringQueryOperatorInput>;
+  frontmatter?: InputMaybe<MdxFrontmatterFilterInput>;
+  slug?: InputMaybe<StringQueryOperatorInput>;
+  body?: InputMaybe<StringQueryOperatorInput>;
+  excerpt?: InputMaybe<StringQueryOperatorInput>;
+  headings?: InputMaybe<MdxHeadingMdxFilterListInput>;
+  html?: InputMaybe<StringQueryOperatorInput>;
+  mdxAST?: InputMaybe<JsonQueryOperatorInput>;
+  tableOfContents?: InputMaybe<JsonQueryOperatorInput>;
+  timeToRead?: InputMaybe<IntQueryOperatorInput>;
+  wordCount?: InputMaybe<MdxWordCountFilterInput>;
+  id?: InputMaybe<StringQueryOperatorInput>;
+  parent?: InputMaybe<NodeFilterInput>;
+  children?: InputMaybe<NodeFilterListInput>;
+  internal?: InputMaybe<InternalFilterInput>;
+};
 
 export type MdxSortInput = {
-  fields?: InputMaybe<Array<InputMaybe<MdxFieldsEnum>>>
-  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>
-}
+  fields?: InputMaybe<Array<InputMaybe<MdxFieldsEnum>>>;
+  order?: InputMaybe<Array<InputMaybe<SortOrderEnum>>>;
+};
 
-export type SeoQueryVariables = Exact<{ [key: string]: never }>
+export type SeoQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type SeoQuery = {
-  site?:
-    | {
-        siteMetadata?:
-          | {
-              siteUrl?: string | null | undefined
-              titleTemplate?: string | null | undefined
-              defaultTitle?: string | null | undefined
-              defaultDescription?: string | null | undefined
-            }
-          | null
-          | undefined
-      }
-    | null
-    | undefined
-}
+
+export type SeoQuery = { site?: { siteMetadata?: { siteUrl?: string | null, titleTemplate?: string | null, defaultTitle?: string | null, defaultDescription?: string | null } | null } | null };
