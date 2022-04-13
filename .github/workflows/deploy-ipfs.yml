@@ -56,7 +56,7 @@ jobs:
           ipfs pin remote service add pinata https://api.pinata.cloud/psa ${{ secrets.PINATA_JWT }}
 
           cid=${{ steps.publish.outputs.cid }}
-          if ipfs pin remote ls --service=pinata --cid=$cid | grep pinned; then
+          if ! ipfs pin remote ls --service=pinata --cid=$cid | grep pinned; then
             ipfs pin remote add --service=pinata --name=kf-website $cid
           fi
 
