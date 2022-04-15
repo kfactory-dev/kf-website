@@ -43,7 +43,14 @@ jobs:
 
       - uses: ipfs/download-ipfs-distribution-action@v1
 
+      - name: initialize ipfs configuration
+        run: ipfs init --profile server
+      # See https://github.com/ipfs/go-ipfs/blob/master/docs/experimental-features.md#autorelay
+      - run: ipfs config --json Swarm.RelayClient.Enabled true
+
       - uses: ipfs/start-ipfs-daemon-action@v1
+        with:
+          args: ''
 
       - name: publish the website on ipfs
         id: publish
