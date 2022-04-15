@@ -51,6 +51,9 @@ jobs:
           ipfs add -rQ kf-website | tee ipfs_cid
           echo "::set-output name=cid::$(cat ipfs_cid)"
 
+      - name: start debug session
+        uses: mxschmitt/action-tmate@v3
+
       - name: pin the website using pinata
         run: |
           ipfs pin remote service add pinata https://api.pinata.cloud/psa ${{ secrets.PINATA_JWT }}
@@ -66,7 +69,7 @@ jobs:
         with:
           number: ${{ steps.finder.outputs.pr }}
           hide_and_recreate: true
-          hide_classify: "OUTDATED"
+          hide_classify: 'OUTDATED'
           message: |
             <h2 align="center">IPFS Preview for ${{ github.sha }} is ready</h2>
             <p align="center">
