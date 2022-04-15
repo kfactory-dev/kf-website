@@ -8685,9 +8685,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-relative-paths@npm:^1.0.1":
+"gatsby-plugin-relative-paths@mpontus/gatsby-plugin-relative-paths#ipfs":
   version: 1.0.1
-  resolution: "gatsby-plugin-relative-paths@npm:1.0.1"
+  resolution: "gatsby-plugin-relative-paths@https://github.com/mpontus/gatsby-plugin-relative-paths.git#commit=01af7a846e86f2df1f9a3e263d838e44857fa657"
   dependencies:
     fs-extra: ^9.0.1
     glob: ^7.1.6
@@ -8696,8 +8696,8 @@ __metadata:
     klaw-sync: ^6.0.0
     p-map: ^2.0.0
   peerDependencies:
-    gatsby: ^2.0.0
-  checksum: 242e69810b82092e2cb548651b5a468bb750a090659a2eda989d15d7c6395251c1750ff92418455f0bec7495ff13d2bc340ed2cd9041676971b5f4e4d1ff00dc
+    gatsby: ^4.0.0
+  checksum: 6204df034ca78e53bbf059cdc2c38a71e57794b2b1c4e796412fd8ada08a4a39e4af2ab7bcbea6bc52eab2aa2cd72aaf062ae6bf1d75f542ffb08186f4df2107
   languageName: node
   linkType: hard
 
@@ -9352,7 +9352,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"graceful-fs@npm:^4.1.11, graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.3, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6, graceful-fs@npm:^4.2.9":
+"graceful-fs@npm:^4.1.11":
+  version: 4.2.10
+  resolution: "graceful-fs@npm:4.2.10"
+  checksum: 3f109d70ae123951905d85032ebeae3c2a5a7a997430df00ea30df0e3a6c60cf6689b109654d6fdacd28810a053348c4d14642da1d075049e6be1ba5216218da
+  languageName: node
+  linkType: hard
+
+"graceful-fs@npm:^4.1.2, graceful-fs@npm:^4.1.6, graceful-fs@npm:^4.2.0, graceful-fs@npm:^4.2.3, graceful-fs@npm:^4.2.4, graceful-fs@npm:^4.2.6, graceful-fs@npm:^4.2.9":
   version: 4.2.9
   resolution: "graceful-fs@npm:4.2.9"
   checksum: 68ea4e07ff2c041ada184f9278b830375f8e0b75154e3f080af6b70f66172fabb4108d19b3863a96b53fc068a310b9b6493d86d1291acc5f3861eb4b79d26ad6
@@ -11030,7 +11037,7 @@ __metadata:
     gatsby-plugin-mdx: ^3.12.1
     gatsby-plugin-postcss: ^5.12.1
     gatsby-plugin-react-helmet: ^5.12.1
-    gatsby-plugin-relative-paths: ^1.0.1
+    gatsby-plugin-relative-paths: "mpontus/gatsby-plugin-relative-paths#ipfs"
     gatsby-plugin-styled-components: ^5.12.1
     gatsby-plugin-ts: ^3.1.1
     gatsby-plugin-tsconfig-paths: ^1.0.5
