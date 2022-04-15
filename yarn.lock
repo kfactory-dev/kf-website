@@ -8684,7 +8684,7 @@ __metadata:
 
 "gatsby-plugin-relative-paths@mpontus/gatsby-plugin-relative-paths#ipfs":
   version: 1.0.1
-  resolution: "gatsby-plugin-relative-paths@https://github.com/mpontus/gatsby-plugin-relative-paths.git#commit=01af7a846e86f2df1f9a3e263d838e44857fa657"
+  resolution: "gatsby-plugin-relative-paths@https://github.com/mpontus/gatsby-plugin-relative-paths.git#commit=0cfffa34b36e28bb8e5cd0f5b99209aa4da1f0ce"
   dependencies:
     fs-extra: ^9.0.1
     glob: ^7.1.6
@@ -8694,7 +8694,7 @@ __metadata:
     p-map: ^2.0.0
   peerDependencies:
     gatsby: ^4.0.0
-  checksum: 6204df034ca78e53bbf059cdc2c38a71e57794b2b1c4e796412fd8ada08a4a39e4af2ab7bcbea6bc52eab2aa2cd72aaf062ae6bf1d75f542ffb08186f4df2107
+  checksum: 276da5bbc0fb18341aff1959385e8caac3b81a88151331fc470accb169172309c98d68cf0ebbbe3df6eb5be56b7793d39d69cd49b31bfac868945dc4ac809924
   languageName: node
   linkType: hard
 
