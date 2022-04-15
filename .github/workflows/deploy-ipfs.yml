@@ -58,9 +58,6 @@ jobs:
           ipfs add -rQ kf-website | tee ipfs_cid
           echo "::set-output name=cid::$(cat ipfs_cid)"
 
-      - name: start debug session
-        uses: mxschmitt/action-tmate@v3
-
       - name: pin the website using pinata
         run: |
           ipfs pin remote service add pinata https://api.pinata.cloud/psa ${{ secrets.PINATA_JWT }}
