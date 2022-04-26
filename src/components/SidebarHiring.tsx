@@ -1,6 +1,6 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { Box, BoxProps, Flex, Grid, Heading, Link, LinkProps, List, Item, Text, TextProps } from '../components'
+import { Box, BoxProps, Flex, Grid, Heading, Item, Link, LinkProps, List, Text, TextProps } from '../components'
 import { useLeverPostings } from '../hooks/use-lever-postings'
 import { AddressParagraph, Sidebar } from '../layout'
 import { SectionProps } from './Section'

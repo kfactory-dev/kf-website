@@ -40,10 +40,6 @@
           installPhase = "mv public $out";
         });
 
-        packages.website-ipfs = defaultPackage.overrideAttrs (oldAttrs: {
-          buildPhase = "GATSBY_IPFS=true yarn build --prefix-paths";
-        });
-
         devShell = pkgs.mkShell { buildInputs = [ yarn ipfs ]; };
       });
 }
