@@ -50,7 +50,7 @@
     "gatsby-plugin-postcss": "^5.12.1",
     "gatsby-plugin-react-helmet": "^5.12.1",
     "gatsby-plugin-relative-paths": "kfactory-dev/gatsby-plugin-relative-paths",
-    "gatsby-plugin-styled-components": "^5.12.1",
+    "gatsby-plugin-styled-components": "^5.13.0",
     "gatsby-plugin-ts": "^3.1.1",
     "gatsby-plugin-tsconfig-paths": "^1.0.5",
     "husky": "^7.0.4",
