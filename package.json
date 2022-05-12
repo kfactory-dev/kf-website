@@ -20,7 +20,7 @@
     "@mdx-js/mdx": "^1.6.22",
     "@mdx-js/react": "^1.6.22",
     "concurrently": "^7.1.0",
-    "gatsby": "^4.12.1",
+    "gatsby": "^4.14.0",
     "nanoid": "^3.3.3",
     "react": "^18.0.0",
     "react-aria-modal": "^4.0.1",
