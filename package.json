@@ -37,7 +37,7 @@
     "@types/react-aria-modal": "^4.0.6",
     "@types/react-dom": "^17.0.14",
     "@types/react-helmet": "^6.1.5",
-    "@types/styled-components": "^5.1.24",
+    "@types/styled-components": "^5.1.25",
     "@types/styled-system": "^5.1.15",
     "@types/youtube": "^0.0.46",
     "@typescript-eslint/eslint-plugin": "^5.16.0",
