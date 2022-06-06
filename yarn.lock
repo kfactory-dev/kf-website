@@ -2966,7 +2966,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/mdx@npm:^1.6.22":
+"@mdx-js/mdx@npm:v1":
   version: 1.6.22
   resolution: "@mdx-js/mdx@npm:1.6.22"
   dependencies:
@@ -2993,7 +2993,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mdx-js/react@npm:^1.6.22":
+"@mdx-js/react@npm:v1":
   version: 1.6.22
   resolution: "@mdx-js/react@npm:1.6.22"
   peerDependencies:
@@ -11855,8 +11855,8 @@ gatsby-plugin-relative-paths@kfactory-dev/gatsby-plugin-relative-paths:
   resolution: "kf-website@workspace:."
   dependencies:
     "@centrifuge/fabric": ^0.0.3
-    "@mdx-js/mdx": ^1.6.22
-    "@mdx-js/react": ^1.6.22
+    "@mdx-js/mdx": v1
+    "@mdx-js/react": v1
     "@types/mdx-js__react": ^1.5.5
     "@types/node": ^17.0.40
     "@types/react": ^18.0.12
