@@ -111,7 +111,7 @@ const DefaultFooter: React.FC = () => (
   </Footer>
 )
 
-export const DefaultLayout = enhance(({ children, ...rest }) => (
+export const DefaultLayout = enhance(({ children, ...rest }: BoxProps) => (
   <Layout {...rest}>
     <DefaultHeader />
     <Main>{children}</Main>
@@ -120,7 +120,7 @@ export const DefaultLayout = enhance(({ children, ...rest }) => (
 ))
 
 export const withSidebar = (sidebar: React.ReactNode) =>
-  enhance(({ children, ...rest }) => (
+  enhance(({ children, ...rest }: BoxProps) => (
     <Layout {...rest}>
       <DefaultHeader />
       <Main>{children}</Main>
