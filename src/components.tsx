@@ -21,14 +21,20 @@ export const Box = styled(Fabric.Box)<BoxProps>(system({ transform: true }))
 
 // Layout
 
-export type ContainerProps = Fabric.ContainerProps
-export const Container = Fabric.Container
+export interface ContainerProps extends Fabric.ContainerProps {
+  children?: React.ReactNode
+}
+export const Container: React.ComponentType<ContainerProps> = Fabric.Container
 
-export type FlexProps = FabricFlex.FlexProps
-export const Flex = FabricFlex.Flex
+export interface FlexProps extends FabricFlex.FlexProps {
+  children?: React.ReactNode
+}
+export const Flex: React.ComponentType<FlexProps> = FabricFlex.Flex
 
-export type GridProps = Fabric.GridProps
-export const Grid = Fabric.Grid
+export interface GridProps extends Fabric.GridProps {
+  children?: React.ReactNode
+}
+export const Grid: React.ComponentType<GridProps> = Fabric.Grid
 
 // Text
 
@@ -37,6 +43,7 @@ export interface TextProps extends TypographyProps, ColorProps {
   cursor?: string
   textDecoration?: string
   whiteSpace?: string
+  children?: React.ReactNode
 }
 export const Text = forwardAs(
   styled(({ as = 'span', ...rest }: TextProps) => {
