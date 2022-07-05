@@ -40,7 +40,7 @@ for LINE in $GPG_RES; do
 	"[GNUPG:] VALIDSIG "*)
 		while read KEY; do
 			[ "${LINE#?GNUPG:? VALIDSIG * * * * * * * * * }" = "$KEY" ] && VALID=true
-		done < ./contrib/verify-commits/trusted-keys
+		done < ./scripts/verify-commits/trusted-keys
 		;;
 	"[GNUPG:] REVKEYSIG "*)
 		[ "$BITCOIN_VERIFY_COMMITS_ALLOW_REVSIG" != 1 ] && exit 1
