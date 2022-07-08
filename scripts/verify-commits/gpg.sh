@@ -33,7 +33,7 @@ else
 			# gpg will fail otherwise
 		esac
 	done
-	[ "$GPG_RES" = "" ] && GPG_RES="$(printf '%s\n' "$INPUT" | gpg --trust-model always --weak-digest sha1 "$@" 2>/dev/null)"
+	[ "$GPG_RES" = "" ] && GPG_RES="$(printf '%s\n' "$INPUT" | gpg --verbose --trust-model always --weak-digest sha1 "$@" | tee /dev/stderr)"
 fi
 for LINE in $GPG_RES; do
 	case "$LINE" in
