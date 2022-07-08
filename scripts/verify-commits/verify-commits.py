@@ -134,13 +134,6 @@ def main():
                 print("{} was not signed with a trusted key!".format(current_commit), file=sys.stderr)
             sys.exit(1)
 
-        # Check the Tree-SHA512
-        if (verify_tree or prev_commit == "") and current_commit not in incorrect_sha512_allowed:
-            tree_hash = tree_sha512sum(current_commit)
-            if ("Tree-SHA512: {}".format(tree_hash)) not in subprocess.check_output([GIT, 'show', '-s', '--format=format:%B', current_commit]).decode('utf8').splitlines():
-                print("Tree-SHA512 did not match for commit " + current_commit, file=sys.stderr)
-                sys.exit(1)
-
         # Merge commits should only have two parents
         parents = subprocess.check_output([GIT, 'show', '-s', '--format=format:%P', current_commit]).decode('utf8').splitlines()[0].split(' ')
         if len(parents) > 2:
