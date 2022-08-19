@@ -47,7 +47,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "gatsby-plugin-mdx": "^3.19.0",
-    "gatsby-plugin-postcss": "^5.19.0",
+    "gatsby-plugin-postcss": "^5.21.0",
     "gatsby-plugin-react-helmet": "^5.19.0",
     "gatsby-plugin-relative-paths": "kfactory-dev/gatsby-plugin-relative-paths",
     "gatsby-plugin-styled-components": "^5.19.0",
