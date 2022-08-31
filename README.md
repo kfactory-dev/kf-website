@@ -29,6 +29,25 @@ Build the website and serve it locally
 yarn build && yarn serve -o
 ```
 
+### Verified commits
+
+First you must fetch GitHub signing key and mainteiners' public keys from the public keyservers.
+
+```shell
+# Fetch GitHub commit signing key
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 4AEE18F83AFDEB23
+
+# Fetch maintainers' GPG keys
+gpg --keyserver hkps://keys.openpgp.org --recv-keys $(<scripts/verify-commits/trusted-keys)
+```
+
+Then you can verify the commit tree with the following command:
+  
+```shell
+./scripts/verify-commits/verify-commits.sh [<commit-hash>]
+```
+
+
 ## Nix Flake
 
 Requires [NixOS](https://nixos.org/) or [Nix](https://nix.dev/) package manager with [flakes enabled](https://nixos.wiki/wiki/Flakes#Installing_flakes).
@@ -43,24 +62,6 @@ Create a reproducible build
 
 ``` shell
 nix build
-```
-
-### Verified commits
-
-You must fetch GitHub signing key and mainteiners' public keys from the public keyservers:
-
-```shell
-# Fetch GitHub commit signing key
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 4AEE18F83AFDEB23
-
-# Fetch maintainers' GPG keys
-gpg --keyserver hkps://keys.openpgp.org --recv-keys $(<scripts/verify-commits/trusted-keys)
-```
-
-Then you can verify the commit tree with the following command:
-  
-```shell
-nix run .#verify-commits [<commit-hash>]
 ```
 
 ## IPFS

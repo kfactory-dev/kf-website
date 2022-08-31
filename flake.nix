@@ -52,8 +52,6 @@
 
         devShell = pkgs.mkShell { buildInputs = [ yarn ipfs ]; };
 
-        packages.verify-commits =
-          inputs.verify-commits.defaultPackage.${system};
-        apps.verify-commits = inputs.verify-commits.defaultApp.${system};
+        apps.verify-commits = inputs.verify-commits.apps.${system}.default;
       });
 }
