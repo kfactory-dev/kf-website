@@ -26,7 +26,6 @@
           };
           nativeBuildInputs = with pkgs; [ python3 ];
           patches = [
-            ./0001-disable-sha512-verification.patch
             ./0002-preserve-input-newline.patch
             ./0003-verbose-output.patch
             ./0004-relative-paths.patch
