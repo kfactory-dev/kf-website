@@ -1,0 +1,25 @@
+From ebb03e007ec79cacc0784d51157434110fd01b67 Mon Sep 17 00:00:00 2001
+From: Michael Pontus <m.pontus@gmail.com>
+Date: Wed, 31 Aug 2022 09:05:46 +0000
+Subject: [PATCH 3/4] verbose output
+
+---
+ contrib/verify-commits/gpg.sh | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/contrib/verify-commits/gpg.sh b/contrib/verify-commits/gpg.sh
+index 66c396b..1d36277 100755
+--- a/contrib/verify-commits/gpg.sh
++++ b/contrib/verify-commits/gpg.sh
+@@ -33,7 +33,7 @@ else
+ 			# gpg will fail otherwise
+ 		esac
+ 	done
+-	[ "$GPG_RES" = "" ] && GPG_RES="$(echo -ne "${INPUT%EOF}" | gpg --trust-model always --weak-digest sha1 "$@" 2>/dev/null)"
++	[ "$GPG_RES" = "" ] && GPG_RES="$(echo -ne "${INPUT%EOF}" | gpg --verbose --trust-model always --weak-digest sha1 "$@" | tee /dev/stderr)"
+ fi
+ for LINE in $GPG_RES; do
+ 	case "$LINE" in
+-- 
+2.37.1
+

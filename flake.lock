@@ -45,11 +45,46 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1661864979,
+        "narHash": "sha256-ajXYYTE1uoY3ei/P1v+Knklf2QNCBxMtw1gByaPTGU4=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "a28adc36c20fd2fbaeb06ec9bbd79b6bf7443979",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-22.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "flake-utils": "flake-utils",
         "nix-filter": "nix-filter",
-        "nixpkgs": "nixpkgs"
+        "nixpkgs": "nixpkgs",
+        "verify-commits": "verify-commits"
+      }
+    },
+    "verify-commits": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1,
+        "narHash": "sha256-/CJLpLCvmO7Im/yD25yoBP561bZbyef3NWGGeSUVYiE=",
+        "path": "./scripts/verify-commits",
+        "type": "path"
+      },
+      "original": {
+        "path": "./scripts/verify-commits",
+        "type": "path"
       }
     }
   },
