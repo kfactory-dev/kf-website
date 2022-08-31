@@ -1,0 +1,12 @@
+name: verify commits
+on:
+  push:
+    branches: [main]
+
+jobs:
+  verify-commits:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: cachix/install-nix-action@v16
+      - run: nix run .#verify-commits
