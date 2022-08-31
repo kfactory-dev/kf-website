@@ -3,11 +3,21 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
-    flake-utils.url = "github:numtide/flake-utils";
-    nix-filter.url = "github:numtide/nix-filter";
+    flake-utils = {
+      url = "github:numtide/flake-utils";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-filter = {
+      url = "github:numtide/nix-filter";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    verify-commits = {
+      url = "path:./scripts/verify-commits";
+      inputs.flake-utils.follows = "flake-utils";
+    };
   };
 
-  outputs = { self, nixpkgs, flake-utils, nix-filter }:
+  outputs = { self, nixpkgs, flake-utils, nix-filter, ... }@inputs:
     flake-utils.lib.eachDefaultSystem (system:
       with import nixpkgs { inherit system; };
       let
@@ -41,5 +51,7 @@
         });
 
         devShell = pkgs.mkShell { buildInputs = [ yarn ipfs ]; };
+
+        apps.verify-commits = inputs.verify-commits.apps.${system}.default;
       });
 }
