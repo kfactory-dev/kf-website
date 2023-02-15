@@ -9270,15 +9270,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gatsby-plugin-react-helmet@npm:^5.19.0":
-  version: 5.19.0
-  resolution: "gatsby-plugin-react-helmet@npm:5.19.0"
+"gatsby-plugin-react-helmet@npm:^5.25.0":
+  version: 5.25.0
+  resolution: "gatsby-plugin-react-helmet@npm:5.25.0"
   dependencies:
     "@babel/runtime": ^7.15.4
   peerDependencies:
     gatsby: ^4.0.0-next
     react-helmet: ^5.1.3 || ^6.0.0
-  checksum: 7890d998b7a8c2f5b577bc2baa86545d995bce1f441a8b838052aa08cd25ff00b7fc5dcef52a732647951a052068367623a8838d574498c95443ad86bed806ee
+  checksum: 4373a35a9a254278dc4c1f1516d8550944135cc6ad2c3684b95caee0fd91a55379986e6552ac5f042a582ed43d126d7a4c767b02ad214e83d54194bebbb81c05
   languageName: node
   linkType: hard
 
@@ -11659,7 +11659,7 @@ gatsby-plugin-relative-paths@kfactory-dev/gatsby-plugin-relative-paths:
     gatsby: ^4.19.2
     gatsby-plugin-mdx: ^3.19.0
     gatsby-plugin-postcss: ^5.19.0
-    gatsby-plugin-react-helmet: ^5.19.0
+    gatsby-plugin-react-helmet: ^5.25.0
     gatsby-plugin-relative-paths: kfactory-dev/gatsby-plugin-relative-paths
     gatsby-plugin-styled-components: ^5.19.0
     gatsby-plugin-ts: ^3.1.1
